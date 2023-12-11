@@ -263,3 +263,6 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+document.querySelector('.clear i').addEventListener('click', function() {
+  document.querySelector('.clear').classList.toggle('rotating');
+});

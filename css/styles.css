@@ -12,7 +12,7 @@
 
 body {
   /* Gradiente de fundo para o corpo */
-  background: linear-gradient(90deg, rgba(15, 55, 255, 0.827) 0%, rgba(255, 255, 255, 0.863) 25%, rgba(168, 0, 183, 0.726) 100%);
+  background: linear-gradient(90deg, rgba(19, 59, 255, 0.635) 0%, rgba(136, 45, 45, 0.863) 25%, rgba(168, 0, 183, 0.726) 100%);
    background-repeat: repeat-y;
 }
 
@@ -192,19 +192,37 @@ select {
   font-style: italic;
 }
 
-.clear{
-  width : 30px;
+.clear {
+  width: 30px;
   height: 30px;
-  right:20px;
+  right: 20px;
   top: 20px;
 }
-.clear i{
+
+.clear i {
   font-size: 30px;
-  color: #ff0000;
+  color: #ffffff;
+  transition: transform 0.3s ease; /* Adicionando uma transição suave para suavizar a animação */
 }
-.clear i:hover{
+
+.clear i:hover {
   cursor: pointer;
-  transform: rotate(50deg);
+  transform: rotate(360deg); /* Modificando a rotação para 360 graus */
+}
+
+/* Adicionando uma animação de rotação contínua */
+@keyframes rotate360 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Aplicando a animação de rotação contínua na classe .clear quando o ícone está girando */
+.clear.rotating i {
+  animation: rotate360 1s linear infinite;
 }
 
 #mtask{
@@ -230,7 +248,7 @@ select {
   border: 1px solid white;
   width: var(--plus_sideLength);
   height: var(--plus_sideLength);
-  background-color: #000000;
+  background-color: #006dd4;
   overflow: hidden;
   
 }
@@ -245,7 +263,7 @@ select {
   height: 0;
   border-width: 0 var(--plus_topRightTriangleSideLength) var(--plus_topRightTriangleSideLength) 0;
   border-style: solid;
-  border-color: transparent white transparent transparent;
+  border-color: transparent rgb(0, 80, 240) transparent transparent;
   transition-timing-function: ease-in-out;
   transition-duration: 0.2s;
 
@@ -253,8 +271,6 @@ select {
 
 .plusButton:hover {
   cursor: pointer;
-  box-shadow: 0 0 10px rgb(0, 0, 0);
-
 }
 
 .plusButton:hover::before {
@@ -288,3 +304,24 @@ select {
   border-color: rgba(240, 248, 255, 0); 
   background-color: rgba(240, 248, 255, 0);
 }
+.carousel-caption {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+#refresh {
+  color: #fff; /* Cor do ícone, ajuste conforme necessário */
+  /* Adicione outros estilos conforme necessário */
+}
+
+.clock {
+  font-size: 3em;
+  text-align: center;
+}
+

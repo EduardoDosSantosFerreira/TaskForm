@@ -21,25 +21,77 @@
     <header>
       <img src="img/tskf_icon.png" id="mtask" alt="Icone" data-aos="fade-down">
       <div class="titulo" data-aos="fade-right">
-        <h1>Taskform</h1>
+        <h1>TaskForm</h1>
       </div>
     </header>
+
+    <div class="clock">
+      <div id="time"></div>
+    </div>
+    
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
           <img src="img/amanhecer.jpg" class="d-block w-100" id="c-item" alt="...">
+          <div class="carousel-caption top-0 mt-0">
+            <div class="clear">
+              <i class="fas fa-refresh" aria-hidden="true" id="refresh"></i>
+            </div>
+          </div>
         </div>
         <div class="carousel-item">
           <img src="img/anoitecer.jpg" class="d-block w-100" id="c-item" alt="...">
+          <div class="carousel-caption top-0 mt-0">
+            <div class="clear">
+              <i class="fas fa-refresh" aria-hidden="true" id="refresh"></i>
+            </div>
+          </div>
         </div>
         <div class="carousel-item">
           <img src="img/entardecer.jpg" class="d-block w-100" id="c-item" alt="...">
+          <div class="carousel-caption top-0 mt-0">
+            <div class="clear">
+              <i class="fas fa-refresh" aria-hidden="true" id="refresh"></i>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="img/outono.jpg" class="d-block w-100" id="c-item" alt="...">
+          <div class="carousel-caption top-0 mt-0">
+            <div class="clear">
+              <i class="fas fa-refresh" aria-hidden="true" id="refresh"></i>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="img/primavera.jpg" class="d-block w-100" id="c-item" alt="...">
+          <div class="carousel-caption top-0 mt-0">
+            <div class="clear">
+              <i class="fas fa-refresh" aria-hidden="true" id="refresh"></i>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="img/tarde.jpg" class="d-block w-100" id="c-item" alt="...">
+          <div class="carousel-caption top-0 mt-0">
+            <div class="clear">
+              <i class="fas fa-refresh" aria-hidden="true" id="refresh"></i>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="img/verao.jpg" class="d-block w-100" id="c-item" alt="...">
+          <div class="carousel-caption top-0 mt-0">
+            <div class="clear">
+              <i class="fas fa-refresh" aria-hidden="true" id="refresh"></i>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
     <form id="todo-form">
-      <p>Adicione Sua Tarefa</p>
+      <h3>Adicione Sua Tarefa<h3>
       <div class="form-row">
         <div class="col-md-8 mb-2" data-aos="fade-left">
           <input type="text" id="todo-input" class="form-control" placeholder="O que você vai fazer?" />
@@ -56,13 +108,7 @@
           </button>
         </div>
       </div>
-      <div class="form-row">
-        <div class="col-md-12 mb-2">
-          <div class="clear">
-            <i class="fas fa-refresh" aria-hidden="true" id="refresh"></i>
-          </div>
-        </div>
-      </div>
+
     </form>
 
     <form id="edit-form" class="hide">
@@ -102,13 +148,14 @@
     </div>
     <div id="todo-list"></div>
   </div>
-
+  
   <!-- scripts -->
   <script src="js/aos.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/scripts.js"></script>
   <script src="js/popper.js"></script>
   <script src="js/jquery.js"></script>
+  <script src="js/clock.js"></script>
   <script>
     AOS.init({
       duration: 2000,
