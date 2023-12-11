@@ -78,8 +78,6 @@ const getSearchedTodos = (search) => {
 
     todo.style.display = "flex";
 
-    console.log(todoTitle);
-
     if (!todoTitle.includes(search)) {
       todo.style.display = "none";
     }
@@ -92,7 +90,6 @@ const filterTodos = (filterValue) => {
   switch (filterValue) {
     case "all":
       todos.forEach((todo) => (todo.style.display = "flex"));
-
       break;
 
     case "done":
@@ -101,7 +98,6 @@ const filterTodos = (filterValue) => {
           ? (todo.style.display = "flex")
           : (todo.style.display = "none")
       );
-
       break;
 
     case "todo":
@@ -110,7 +106,6 @@ const filterTodos = (filterValue) => {
           ? (todo.style.display = "flex")
           : (todo.style.display = "none")
       );
-
       break;
 
     default:
@@ -251,18 +246,16 @@ loadTodos();
 
 document.addEventListener('DOMContentLoaded', function () {
   // Obtém a referência para o ícone de atualização
-  var refreshIcon = document.getElementById('refresh');
+  var refreshIcons = document.querySelectorAll('.fa-refresh');
 
-  // Adiciona um ouvinte de eventos para o clique no ícone de atualização
-  refreshIcon.addEventListener('click', function () {
-    // Limpa o localStorage
-    localStorage.clear();
-    
-    // Recarrega a página
-    location.reload();
+  // Adiciona um ouvinte de eventos para o clique em cada ícone de atualização
+  refreshIcons.forEach(function (refreshIcon) {
+    refreshIcon.addEventListener('click', function () {
+      // Limpa o localStorage
+      localStorage.clear();
+
+      // Recarrega a página
+      location.reload();
+    });
   });
-});
-
-document.querySelector('.clear i').addEventListener('click', function() {
-  document.querySelector('.clear').classList.toggle('rotating');
 });
