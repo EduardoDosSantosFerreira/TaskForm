@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taskform</title>
+  <link rel="stylesheet" href="css/aos.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/font-awesome.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="icon" type="image" sizes="50x50" href="img/tskf_icon.png">
+</head>
+
+<body>
+  <div class="container todo-container" data-aos="fade-down">
+    <header>
+      <img src="img/tskf_icon.png" id="mtask" alt="Icone" data-aos="fade-down">
+      <div class="titulo" data-aos="fade-right">
+        <h1>TaskForm</h1>
+      </div>
+    </header>
+
+    <div class="clock">
+      <div id="time"></div>
+    </div>
+    
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="img/amanhecer.jpg" class="d-block w-100" id="c-item" alt="...">
+          <div class="carousel-caption top-0 mt-0">
+            <div class="clear">
+              <i class="fas fa-refresh" aria-hidden="true" id="refresh"></i>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="img/anoitecer.jpg" class="d-block w-100" id="c-item" alt="...">
+          <div class="carousel-caption top-0 mt-0">
+            <div class="clear">
+              <i class="fas fa-refresh" aria-hidden="true" id="refresh"></i>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="img/entardecer.jpg" class="d-block w-100" id="c-item" alt="...">
+          <div class="carousel-caption top-0 mt-0">
+            <div class="clear">
+              <i class="fas fa-refresh" aria-hidden="true" id="refresh"></i>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="img/outono.jpg" class="d-block w-100" id="c-item" alt="...">
+          <div class="carousel-caption top-0 mt-0">
+            <div class="clear">
+              <i class="fas fa-refresh" aria-hidden="true" id="refresh"></i>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="img/primavera.jpg" class="d-block w-100" id="c-item" alt="...">
+          <div class="carousel-caption top-0 mt-0">
+            <div class="clear">
+              <i class="fas fa-refresh" aria-hidden="true" id="refresh"></i>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="img/tarde.jpg" class="d-block w-100" id="c-item" alt="...">
+          <div class="carousel-caption top-0 mt-0">
+            <div class="clear">
+              <i class="fas fa-refresh" aria-hidden="true" id="refresh"></i>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="img/verao.jpg" class="d-block w-100" id="c-item" alt="...">
+          <div class="carousel-caption top-0 mt-0">
+            <div class="clear">
+              <i class="fas fa-refresh" aria-hidden="true" id="refresh"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <form id="todo-form">
+      <h3>Adicione Sua Tarefa<h3>
+      <div class="form-row">
+        <div class="col-md-8 mb-2" data-aos="fade-left">
+          <input type="text" id="todo-input" class="form-control" placeholder="O que você vai fazer?" />
+        </div>
+        <div class="col-md-4 mb-2" data-aos="fade-right">
+          <button id="adc">
+            <div tabindex="0" type="submit" class="plusButton">
+              <svg class="plusIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+                <g mask="url(#mask0_21_345)">
+                  <path d="M13.75 23.75V16.25H6.25V13.75H13.75V6.25H16.25V13.75H23.75V16.25H16.25V23.75H13.75Z"></path>
+                </g>
+              </svg>
+            </div>
+          </button>
+        </div>
+      </div>
+
+    </form>
+
+    <form id="edit-form" class="hide">
+      <p>Edite sua tarefa</p>
+      <div class="form-group">
+        <input type="text" id="edit-input" class="form-control" />
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-success">
+          <i class="fas fa-check-double"></i> Salvar
+        </button>
+        <button id="cancel-edit-btn" class="btn btn-secondary ml-2">Cancelar</button>
+      </div>
+    </form>
+
+    <div id="toolbar" data-aos="fade-left">
+      <div id="search" class="mb-3">
+        <h4>Pesquisar:</h4>
+        <form class="form-inline">
+          <div class="form-group">
+            <input type="text" id="search-input" class="form-control" placeholder="Buscar..." />
+          </div>
+          <button id="erase-button" class="btn btn-danger ml-12">
+            <i class="fas fa-delete-left" style="color: aliceblue;"></i>
+          </button>
+        </form>
+      </div>
+
+      <div id="filter" data-aos="fade-right">
+        <h4>Filtrar:</h4>
+        <select id="filter-select" class="form-control">
+          <option value="all">Todos</option>
+          <option value="done">Feitos</option>
+          <option value="todo">A fazer</option>
+        </select>
+      </div>
+    </div>
+    <div id="todo-list"></div>
+  </div>
+  
+  <!-- scripts -->
+  <script src="js/aos.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/scripts.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/jquery.js"></script>
+  <script src="js/clock.js"></script>
+  <script>
+    AOS.init({
+      duration: 2000,
+    }
+    );
+  </script>
+</body>
+
+</html>
