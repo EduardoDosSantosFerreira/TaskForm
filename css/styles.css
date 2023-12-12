@@ -193,15 +193,14 @@ select {
 }
 
 .clear {
+  color: #000000;
   width: 30px;
   height: 30px;
-  right: 20px;
-  top: 20px;
 }
 
 .clear i {
   font-size: 30px;
-  color: #ffffff;
+  color: #0174bc;
   transition: transform 0.3s ease; /* Adicionando uma transição suave para suavizar a animação */
 }
 
@@ -254,7 +253,6 @@ select {
 }
 
 .plusButton::before {
-  
   position: absolute;
   content: "";
   top: 0;
@@ -316,7 +314,7 @@ select {
 }
 
 #refresh {
-  color: #fff; /* Cor do ícone, ajuste conforme necessário */
+  color: #4c00ff; /* Cor do ícone, ajuste conforme necessário */
   /* Adicione outros estilos conforme necessário */
 }
 
@@ -325,4 +323,19 @@ select {
   text-align: center;
   
 }
+.hidden {
+  display: none;
+}
 
+body::-webkit-scrollbar {
+  width: 12px; /* Largura da barra de rolagem */
+}
+
+body::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #4e69a2, #8360c3); /* Gradiente azul e roxo */
+  border-radius: 6px; /* Raio dos cantos da "thumb" (o indicador de posição) */
+}
+
+body::-webkit-scrollbar-track {
+  background: #f0f0f0; /* Cor de fundo da barra de rolagem */
+}
