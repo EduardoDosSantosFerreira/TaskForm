@@ -1,0 +1,341 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap');
+
+/* All */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Cinzel', serif;
+  color: #000000;
+}
+
+body {
+  /* Gradiente de fundo para o corpo */
+  background: linear-gradient(90deg, rgba(19, 59, 255, 0.635) 0%, rgba(136, 45, 45, 0.863) 25%, rgba(168, 0, 183, 0.726) 100%);
+   background-repeat: repeat-y;
+}
+
+button {
+  /* Estilo base para botões */
+  background-color: #fdfdfd;
+  color: #102f5e;
+  border: 2px solid #102f5e;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.4s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button:hover {
+  /* Efeito de hover para botões */
+  background-color: #102f5e;
+  color: #fff;
+}
+
+button i {
+  /* Estilo para ícones dentro de botões */
+  pointer-events: none;
+  color: #102f5e;
+  font-weight: bold;
+}
+
+input,
+select {
+  /* Estilo base para inputs e selects */
+  padding: 0.5rem 1rem;
+}
+
+.hide {
+  /* Classe para esconder elementos */
+  display: none;
+}
+
+/* Todo Header */
+.todo-container {
+  /* Container principal para o aplicativo */
+  max-width: 550px;
+  margin: 3rem auto 0;
+  background-color: #fdfdfd;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgb(0, 0, 0);
+}
+
+.todo-container header {
+  /* Estilo do cabeçalho do aplicativo */
+  text-align: center;
+  padding: 0 1rem 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Form */
+#todo-form,
+#edit-form {
+  /* Estilo para formulários */
+  padding: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+#todo-form p,
+#edit-form p {
+  /* Estilo para parágrafos dentro dos formulários */
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.form-control {
+  /* Container para inputs e botões no mesmo grupo */
+  display: flex;
+  align-items: center;
+}
+
+.form-control input {
+  /* Estilo para inputs dentro do container */
+  flex: 1;
+  margin-right: 0.5rem;
+}
+
+#cancel-edit-btn {
+  /* Estilo para o botão de cancelar edição */
+  color: #444;
+}
+
+/* Todo Toolbar */
+#toolbar {
+  /* Estilo para a barra de ferramentas */
+  padding: 1rem;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+}
+
+#toolbar h4 {
+  /* Estilo para títulos na barra de ferramentas */
+  margin-bottom: 0.5rem;
+}
+
+#search {
+  /* Estilo para a seção de pesquisa na barra de ferramentas */
+  border-right: 1px solid #ddd;
+  padding-right: 1rem;
+  margin-right: 1rem;
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+}
+
+#search form {
+  /* Estilo para formulário de pesquisa */
+  display: flex;
+  align-items: center;
+}
+
+#search input {
+  /* Estilo para input de pesquisa */
+  flex: 1;
+  margin-right: 0.5rem;
+}
+
+#erase-button {
+  /* Estilo para o botão de apagar */
+  width: 150px;
+  color: #fff;
+}
+
+#filter {
+  /* Estilo para a seção de filtro na barra de ferramentas */
+  width: 150px;
+  height: 90px;
+  display: flex;
+  flex-direction: column;
+}
+
+#filter select {
+  /* Estilo para o seletor de filtro */
+  flex: 1;
+}
+
+/* Todo List */
+.todo {
+  /* Estilo para cada item na lista de tarefas */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1rem;
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.3s;
+}
+
+.todo h3 {
+  /* Estilo para o texto da tarefa */
+  flex: 1;
+  font-size: 1rem;
+}
+
+.todo button {
+  /* Estilo para botões dentro dos itens da lista */
+  margin-left: 1rem;
+}
+
+.done {
+  /* Estilo para itens marcados como concluídos */
+  background: #395169;
+}
+
+.done h3 {
+  /* Estilo para texto de tarefas concluídas */
+  color: #fff;
+  text-decoration: line-through;
+  font-style: italic;
+}
+
+.clear {
+  color: #000000;
+  width: 30px;
+  height: 30px;
+}
+
+.clear i {
+  font-size: 30px;
+  color: #0174bc;
+  transition: transform 0.3s ease; /* Adicionando uma transição suave para suavizar a animação */
+}
+
+.clear i:hover {
+  cursor: pointer;
+  transform: rotate(360deg); /* Modificando a rotação para 360 graus */
+}
+
+/* Adicionando uma animação de rotação contínua */
+@keyframes rotate360 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Aplicando a animação de rotação contínua na classe .clear quando o ícone está girando */
+.clear.rotating i {
+  animation: rotate360 1s linear infinite;
+}
+
+#mtask{
+  height: 45px;
+}
+
+#todo-form .form-row {
+  display: flex;
+  align-items: center;
+}
+
+/* Note that you only needs to edit the config to customize the button! */
+
+.plusButton {
+  /* Config start */
+  --plus_sideLength: 2.5rem;
+  --plus_topRightTriangleSideLength: 0.9rem;
+  /* Config end */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+  width: var(--plus_sideLength);
+  height: var(--plus_sideLength);
+  background-color: #006dd4;
+  overflow: hidden;
+  
+}
+
+.plusButton::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-width: 0 var(--plus_topRightTriangleSideLength) var(--plus_topRightTriangleSideLength) 0;
+  border-style: solid;
+  border-color: transparent rgb(0, 80, 240) transparent transparent;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.2s;
+
+}
+
+.plusButton:hover {
+  cursor: pointer;
+}
+
+.plusButton:hover::before {
+  --plus_topRightTriangleSideLength: calc(var(--plus_sideLength) * 2);
+}
+
+.plusButton:focus-visible::before {
+  --plus_topRightTriangleSideLength: calc(var(--plus_sideLength) * 2);
+}
+
+.plusButton>.plusIcon {
+  fill: white;
+  width: calc(var(--plus_sideLength) * 0.7);
+  height: calc(var(--plus_sideLength) * 0.7);
+  z-index: 1;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.2s;
+}
+
+.plusButton:hover>.plusIcon {
+  fill: black;
+  transform: rotate(180deg);
+}
+
+.plusButton:focus-visible>.plusIcon {
+  fill: black;
+  transform: rotate(180deg);
+}
+
+#adc{
+  border-color: rgba(240, 248, 255, 0); 
+  background-color: rgba(240, 248, 255, 0);
+}
+.carousel-caption {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+#refresh {
+  color: #4c00ff; /* Cor do ícone, ajuste conforme necessário */
+  /* Adicione outros estilos conforme necessário */
+}
+
+.clock {
+  font-size: 1.9em;
+  text-align: center;
+  
+}
+.hidden {
+  display: none;
+}
+
+body::-webkit-scrollbar {
+  width: 12px; /* Largura da barra de rolagem */
+}
+
+body::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #4e69a2, #8360c3); /* Gradiente azul e roxo */
+  border-radius: 6px; /* Raio dos cantos da "thumb" (o indicador de posição) */
+}
+
+body::-webkit-scrollbar-track {
+  background: #f0f0f0; /* Cor de fundo da barra de rolagem */
+}
