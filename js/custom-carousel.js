@@ -30,3 +30,15 @@ document.addEventListener('DOMContentLoaded', function () {
   updateSlideBasedOnTime();
   setInterval(updateSlideBasedOnTime, 60000);
 });
+
+$(document).ready(function () {
+  // Ativar o tooltip para cada div com a classe 'slide'
+  $('.slide').tooltip({
+    placement: 'bottom', // ou 'top', 'right', 'left' conforme sua preferência
+    title: function () {
+      // Obter o texto informativo do atributo 'title' da div
+      return $(this).attr('title');
+    },
+    html: true
+  });
+});

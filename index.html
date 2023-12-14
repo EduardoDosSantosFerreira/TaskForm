@@ -2,10 +2,13 @@
 <html lang="pt-br">
 
 <head>
+  <!-- Meta tags -->
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Título da página -->
   <title>Taskform</title>
+  <!-- Estilos CSS -->
   <link rel="stylesheet" href="css/aos.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/styles.css" />
@@ -13,34 +16,43 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
     integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Ícone da página -->
   <link rel="icon" type="image" sizes="50x50" href="img/tskf_icon.png">
 </head>
 
 <body>
   <div class="container todo-container" data-aos="fade-down">
 
+    <!-- Cabeçalho -->
     <header>
       <img src="img/tskf_icon.png" id="mtask" alt="Icone" data-aos="fade-down">
       <div class="titulo" data-aos="fade-right"><br>
         <h1>TaskForm</h1>
       </div>
     </header>
+    <!--  -->
 
+    <!-- Relógio -->
     <div class="clock">
       <div id="time"></div>
     </div>
-    
+    <!--  -->
+
+    <!-- Slide Container -->
     <div id="slide-container">
-      <div id="amanhecer" class="slide hidden">
+      <div id="amanhecer" class="slide hidden" title="Amanhã: 6h00 às 11h59">
         <img src="img/amanhecer.jpg" alt="Amanhecer" style="max-width: 100%; max-height: 100%;">
       </div>
-      <div id="entardecer" class="slide hidden">
+      <div id="entardecer" class="slide hidden" title="Tarde: 12h00 às 17h59">
         <img src="img/entardecer.jpg" alt="Entardecer" style="max-width: 100%; max-height: 100%;">
       </div>
-      <div id="anoitecer" class="slide hidden">
+      <div id="anoitecer" class="slide hidden" title="Noite: 18h00 às 23h59">
         <img src="img/anoitecer.jpg" alt="Anoitecer" style="max-width: 100%; max-height: 100%;">
       </div>
     </div>
+    <!--  -->
+
+    <!-- Formulário de tarefas -->
     <form id="todo-form">
       <p>Adicione Sua Tarefa</p>
       <div class="form-row">
@@ -58,38 +70,54 @@
             </div>
           </button>
         </div>
+        <!--  -->
+
+        <!-- Ícone de refresh para recarregar a página -->
         <div class="clear">
           <i class="fas fa-refresh" aria-hidden="true" id="refresh"></i>
         </div>
-      </div>      
+      </div>
     </form>
+    <!--  -->
 
+    <!-- Formulário de edição de tarefas -->
     <form id="edit-form" class="hide">
       <p>Edite sua tarefa</p>
       <div class="form-group">
         <input type="text" id="edit-input" class="form-control" />
       </div>
       <div class="form-group">
+        <!-- Botões de salvar e cancelar a edição -->
         <button type="submit" class="btn btn-success">
           <i class="fas fa-check-double"></i> Salvar
         </button>
         <button id="cancel-edit-btn" class="btn btn-secondary ml-2">Cancelar</button>
       </div>
     </form>
+    <!--  -->
 
+    <!-- Barra de ferramentas -->
     <div id="toolbar" data-aos="fade-left">
+      <!--  -->
+
+      <!-- Barra de pesquisa -->
       <div id="search" class="mb-3">
         <h4>Pesquisar:</h4>
         <form class="form-inline">
           <div class="form-group">
             <input type="text" id="search-input" class="form-control" placeholder="Buscar..." />
           </div>
+          <!--  -->
+
+          <!-- Botão para apagar a busca -->
           <button id="erase-button" class="btn btn-danger ml-12">
             <i class="fas fa-delete-left" style="color: aliceblue;"></i>
           </button>
         </form>
       </div>
+      <!--  -->
 
+      <!-- Menu de filtragem -->
       <div id="filter" data-aos="fade-right">
         <h4>Filtrar:</h4>
         <select id="filter-select" class="form-control">
@@ -99,10 +127,14 @@
         </select>
       </div>
     </div>
+    <!--  -->
+
+  <!-- Lista de tarefas -->
     <div id="todo-list"></div>
   </div>
-  
-  <!-- scripts -->
+  <!--  -->
+
+  <!-- Scripts -->
   <script src="js/aos.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/scripts.js"></script>
@@ -111,11 +143,13 @@
   <script src="js/clock.js"></script>
   <script src="js/custom-carousel.js"></script>
   <script>
+    // Inicialização da animação AOS
     AOS.init({
       duration: 2000,
-    }
-    );
+    });
   </script>
+  <!--  -->
+
 </body>
 
 </html>

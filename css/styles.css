@@ -306,10 +306,10 @@ select {
   position: absolute;
   top: 0;
   right: 0;
+  padding: 10px;
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
-  padding: 10px;
   box-sizing: border-box;
 }
 
