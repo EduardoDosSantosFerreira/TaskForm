@@ -1,24 +1,23 @@
-const notepad = document.getElementById('notepad');
-const downloadButton = document.getElementById('downloadButton');
+  function downloadNotepad() {
+    // Obtém o conteúdo do Notepad
+    var notepadContent = document.getElementById('notepad').value;
 
-notepad.addEventListener('keydown', function (event) {
-  if (event.key === 'Enter' && !event.shiftKey) {
-    event.preventDefault();
-    downloadTxtFile();
+    // Cria um objeto Blob com o conteúdo do Notepad
+    var blob = new Blob([notepadContent], { type: 'text/plain' });
+
+    // Cria uma URL para o Blob
+    var url = window.URL.createObjectURL(blob);
+
+    // Cria um link temporário e simula o clique para iniciar o download
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = 'notepad.txt';
+    document.body.appendChild(a);
+    a.click();
+
+    // Remove o link temporário
+    document.body.removeChild(a);
+
+    // Emite um alerta informando que a operação foi concluída com sucesso
+    alert('Operação concluída com sucesso!');
   }
-});
-
-downloadButton.addEventListener('click', function () {
-  downloadTxtFile();
-});
-
-function downloadTxtFile() {
-  const content = notepad.value;
-  const blob = new Blob([content], { type: 'text/plain' });
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = 'notepad.txt';
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-}

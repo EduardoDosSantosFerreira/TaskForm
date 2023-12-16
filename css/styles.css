@@ -397,20 +397,61 @@ textarea {
   font-size: 1rem;
 }
 
-#downloadButton {
+#downloadBtn {
   background-color: #0174bc;
   color: #ddd;
-  padding: 10px 20px; /* Ajuste conforme necessário */
+  padding: 10px 20px;
   font-size: 1rem;
   cursor: pointer;
-  margin-top: 10px; /* Adiciona espaço acima do botão para centralizá-lo em relação à área de texto */
-  transition: background-color 0.3s; /* Efeito de transição para a mudança de cor de fundo */
+  margin: 10px auto 0; /* Centraliza o botão e adiciona espaço acima */
+  transition: background-color 0.3s;
 }
 
-#downloadButton:hover {
-  background-color: #014066; /* Cor alterada ao passar o mouse */
+#downloadBtn:hover {
+  background-color: #014066;
 }
 
-#downloadButton:active {
-  transform: translateY(2px); /* Efeito de pressionar o botão */
+#downloadBtn:active {
+  transform: translateY(2px);
+}
+
+/* Calendário */
+.card {
+  margin-bottom: 20px;
+}
+
+.card-header {
+  font-size: 1.5rem;
+}
+
+.table {
+  margin-bottom: 0;
+}
+
+.table th, .table td {
+  text-align: center;
+}
+
+.table-responsive-md {
+  overflow-x: auto;
+}
+
+.btn-light, .btn-success {
+  font-size: 1rem;
+}
+
+.btn-dark, .btn-light, .btn-success {
+  color: #fff;
+}
+
+.btn-dark, .btn-light, .btn-success {
+  background-color: #000;
+  border-color: #000;
+}
+
+/* Adaptações para dispositivos de tela menores */
+@media (max-width: 768px) {
+  #calendarTable {
+      margin-bottom: 20px; /* Espaçamento entre o calendário e a agenda */
+  }
 }

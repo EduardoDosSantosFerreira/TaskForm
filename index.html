@@ -217,18 +217,71 @@
       </div>
     </header>
     <textarea id="notepad" placeholder="Digite seu texto aqui..."></textarea>
-    <button id="downloadButton" onclick="downloadTxtFile()">Baixe o TXT</button>
-    </div>  
+    <button id="downloadBtn" onclick="downloadNotepad()">Download Notepad</button>
+    </div>
   <!-- Fim NotePad -->
+
+  <!-- Agenda -->
+  <div class="container todo-container" data-aos="fade-down">
+    <div class="container mt-5">
+      <div class="card">
+          <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+              <button id="prevMonth" class="btn btn-light">&lt;</button>
+              <h2 id="currentMonthYear" class="m-0">Mês/Ano</h2>
+              <button id="nextMonth" class="btn btn-light">&gt;</button>
+          </div>
+          <div class="card-body">
+              <div class="row"  style="height: 302px">
+                  <div class="col-md-12" >
+                      <table id="calendarTable" class="table table-bordered table-responsive-md" >
+                          <!-- Calendário será gerado aqui com JavaScript -->
+                      </table>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-12">
+                      <div class="card">
+                          <div class="card-header bg-dark text-white">
+                              <h2>Agenda</h2>
+                          </div>
+                          <form id="appointmentForm" class="card-body">
+                              <div class="form-group">
+                                  <label for="appointmentDate" class="text-white">Data:</label>
+                                  <input type="date" id="appointmentDate" class="form-control" required>
+                              </div>
+                              <div class="form-group">
+                                  <label for="appointmentTime" class="text-white">Hora:</label>
+                                  <input type="time" id="appointmentTime" class="form-control" required>
+                              </div>
+                              <div class="form-group">
+                                  <label for="appointmentLocation" class="text-white">Local:</label>
+                                  <input type="text" id="appointmentLocation" class="form-control" required>
+                              </div>
+                              <div class="form-group text-center">
+                                <button type="button" id="addAppointment" class="btn btn-success">Adicionar Compromisso</button>
+                            </div>                          </form>
+                          <ul id="agendaList" class="list-group list-group-flush">
+                              <!-- Agenda será gerada aqui com JavaScript -->
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  </div>
+<!-- Fim Agenda -->
 
   <!-- Scripts -->
   <script src="js/aos.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/scripts.js"></script>
+  <script src="js/clock.js"></script>
   <script src="js/popper.js"></script>
   <script src="js/jquery.js"></script>
-  <script src="js/clock.js"></script>
+  <script src="js/notepad.js"></script>
+  <script src="js/scripts.js"></script>
+  <script src="js/calendario.js"></script>
   <script src="js/calculadora.js"></script>
+  <script src="js/bootstrap.min.js"></script>
   <script src="js/custom-carousel.js"></script>
   <script>
     // Inicialização da animação AOS
