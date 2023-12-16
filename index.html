@@ -21,11 +21,49 @@
 </head>
 
 <body>
+  <!-- NavBar -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="img/tskf_icon.png" id="nav-icon" alt="nav-icon"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+<!--  -->
+
   <div class="container todo-container" data-aos="fade-down">
 
     <!-- Cabeçalho -->
     <header>
-      <img src="img/tskf_icon.png" id="mtask" alt="Icone" data-aos="fade-down">
       <div class="titulo" data-aos="fade-right"><br>
         <h1>TaskForm</h1>
       </div>
@@ -53,6 +91,7 @@
     <!--  -->
 
     <!-- Formulário de tarefas -->
+    <br>
     <form id="todo-form">
       <p>Adicione Sua Tarefa</p>
       <div class="form-row">
@@ -72,7 +111,7 @@
         </div>
         <!--  -->
 
-        <!-- Ícone de refresh para recarregar a página -->
+      <!-- Ícone de refresh para recarregar a página -->
         <div class="clear">
           <i class="fas fa-refresh" aria-hidden="true" id="refresh"></i>
         </div>
@@ -134,6 +173,54 @@
   </div>
   <!--  -->
 
+
+  <!-- Calculadora -->
+  
+  <div class="container todo-container" data-aos="fade-down">
+    <header>
+      <div class="titulo" data-aos="fade-right"><br>
+        <h1>Calculator</h1>
+      </div>
+    </header>
+    <div class="calculator-container">
+      <input type="text" id="display" disabled />
+      <div class="buttons">
+        <button id="clear" onclick="clearDisplay()">C</button>
+        <button id="power" onclick="appendChar('^')">^</button>
+        <button id="delete" onclick="deleteLastChar()">⌫</button>
+        <button id="divide" onclick="appendChar('/')">/</button>
+        <button id="seven" onclick="appendChar('7')">7</button>
+        <button id="eight" onclick="appendChar('8')">8</button>
+        <button id="nine" onclick="appendChar('9')">9</button>
+        <button id="multiply" onclick="appendChar('*')">*</button>
+        <button id="four" onclick="appendChar('4')">4</button>
+        <button id="five" onclick="appendChar('5')">5</button>
+        <button id="six" onclick="appendChar('6')">6</button>
+        <button id="subtract" onclick="appendChar('-')">-</button>
+        <button id="one" onclick="appendChar('1')">1</button>
+        <button id="two" onclick="appendChar('2')">2</button>
+        <button id="three" onclick="appendChar('3')">3</button>
+        <button id="add" onclick="appendChar('+')">+</button>
+        <button id="zero" onclick="appendChar('0')">0</button>
+        <button id="decimal" onclick="appendChar('.')">.</button>
+        <button id="equals" onclick="calculateResult()">=</button>
+      </div>
+  </div>
+  </div>
+  <!-- Fim Calculadora -->
+
+  <!-- NotePad -->
+  <div class="container todo-container" data-aos="fade-down">
+    <header>
+      <div class="titulo" data-aos="fade-right"><br>
+        <h1>NotePad</h1>
+      </div>
+    </header>
+    <textarea id="notepad" placeholder="Digite seu texto aqui..."></textarea>
+    <button id="downloadButton" onclick="downloadTxtFile()">Baixe o TXT</button>
+    </div>  
+  <!-- Fim NotePad -->
+
   <!-- Scripts -->
   <script src="js/aos.js"></script>
   <script src="js/bootstrap.min.js"></script>
@@ -141,6 +228,7 @@
   <script src="js/popper.js"></script>
   <script src="js/jquery.js"></script>
   <script src="js/clock.js"></script>
+  <script src="js/calculadora.js"></script>
   <script src="js/custom-carousel.js"></script>
   <script>
     // Inicialização da animação AOS
