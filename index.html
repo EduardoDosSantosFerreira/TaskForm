@@ -25,7 +25,8 @@
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
       <a class="navbar-brand" href="#"><img src="img/tskf_icon.png" id="nav-icon" alt="nav-icon"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -34,7 +35,16 @@
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#Tasklist">Tasklist</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Calculadora">Calculadora</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Notepad">NotePad</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Agenda">Agenda</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -43,12 +53,11 @@
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">Action</a></li>
               <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
               <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
           </li>
         </ul>
         <form class="d-flex" role="search">
@@ -58,7 +67,7 @@
       </div>
     </div>
   </nav>
-<!--  -->
+  <!--  -->
 
   <div class="container todo-container" data-aos="fade-down">
 
@@ -93,7 +102,7 @@
     <!-- Formulário de tarefas -->
     <br>
     <form id="todo-form">
-      <p>Adicione Sua Tarefa</p>
+      <p id="Tasklist">Adicione Sua Tarefa</p>
       <div class="form-row">
         <div class="col-md-8 mb-2" data-aos="fade-left">
           <input type="text" id="todo-input" class="form-control" placeholder="O que você vai fazer?" />
@@ -111,7 +120,7 @@
         </div>
         <!--  -->
 
-      <!-- Ícone de refresh para recarregar a página -->
+        <!-- Ícone de refresh para recarregar a página -->
         <div class="clear">
           <i class="fas fa-refresh" aria-hidden="true" id="refresh"></i>
         </div>
@@ -168,17 +177,18 @@
     </div>
     <!--  -->
 
-  <!-- Lista de tarefas -->
+    <!-- Lista de tarefas -->
     <div id="todo-list"></div>
   </div>
   <!--  -->
 
+  <div id="Calculadora" class="link"></div>
 
   <!-- Calculadora -->
-  
+
   <div class="container todo-container" data-aos="fade-down">
     <header>
-      <div class="titulo" data-aos="fade-right"><br>
+      <div  class="titulo" data-aos="fade-right"><br>
         <h1>Calculator</h1>
       </div>
     </header>
@@ -205,12 +215,12 @@
         <button id="decimal" onclick="appendChar('.')">.</button>
         <button id="equals" onclick="calculateResult()">=</button>
       </div>
-  </div>
+    </div>
   </div>
   <!-- Fim Calculadora -->
 
   <!-- NotePad -->
-  <div class="container todo-container" data-aos="fade-down">
+  <div id="Notepad" class="container todo-container" data-aos="fade-down">
     <header>
       <div class="titulo" data-aos="fade-right"><br>
         <h1>NotePad</h1>
@@ -218,59 +228,60 @@
     </header>
     <textarea id="notepad" placeholder="Digite seu texto aqui..."></textarea>
     <button id="downloadBtn" onclick="downloadNotepad()">Download Notepad</button>
-    </div>
+  </div>
   <!-- Fim NotePad -->
 
   <!-- Agenda -->
   <div class="container todo-container" data-aos="fade-down">
     <div class="container mt-5">
       <div class="card">
-          <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
-              <button id="prevMonth" class="btn btn-light">&lt;</button>
-              <h2 id="currentMonthYear" class="m-0">Mês/Ano</h2>
-              <button id="nextMonth" class="btn btn-light">&gt;</button>
+        <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+          <button id="prevMonth" class="btn btn-light">&lt;</button>
+          <h2 id="currentMonthYear" class="m-0">Mês/Ano</h2>
+          <button id="nextMonth" class="btn btn-light">&gt;</button>
+        </div>
+        <div class="card-body">
+          <div class="row" style="height: 302px">
+            <div class="col-md-12">
+              <table id="calendarTable" class="table table-bordered table-responsive-md">
+                <!-- Calendário será gerado aqui com JavaScript -->
+              </table>
+            </div>
           </div>
-          <div class="card-body">
-              <div class="row"  style="height: 302px">
-                  <div class="col-md-12" >
-                      <table id="calendarTable" class="table table-bordered table-responsive-md" >
-                          <!-- Calendário será gerado aqui com JavaScript -->
-                      </table>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header bg-dark text-white">
+                  <h2 id="Agenda">Agenda</h2>
+                </div>
+                <form id="appointmentForm" class="card-body">
+                  <div class="form-group">
+                    <label for="appointmentDate" class="text-white">Data:</label>
+                    <input type="date" id="appointmentDate" class="form-control" required>
                   </div>
-              </div>
-              <div class="row">
-                  <div class="col-md-12">
-                      <div class="card">
-                          <div class="card-header bg-dark text-white">
-                              <h2>Agenda</h2>
-                          </div>
-                          <form id="appointmentForm" class="card-body">
-                              <div class="form-group">
-                                  <label for="appointmentDate" class="text-white">Data:</label>
-                                  <input type="date" id="appointmentDate" class="form-control" required>
-                              </div>
-                              <div class="form-group">
-                                  <label for="appointmentTime" class="text-white">Hora:</label>
-                                  <input type="time" id="appointmentTime" class="form-control" required>
-                              </div>
-                              <div class="form-group">
-                                  <label for="appointmentLocation" class="text-white">Local:</label>
-                                  <input type="text" id="appointmentLocation" class="form-control" required>
-                              </div>
-                              <div class="form-group text-center">
-                                <button type="button" id="addAppointment" class="btn btn-success">Adicionar Compromisso</button>
-                            </div>                          </form>
-                          <ul id="agendaList" class="list-group list-group-flush">
-                              <!-- Agenda será gerada aqui com JavaScript -->
-                          </ul>
-                      </div>
+                  <div class="form-group">
+                    <label for="appointmentTime" class="text-white">Hora:</label>
+                    <input type="time" id="appointmentTime" class="form-control" required>
                   </div>
+                  <div class="form-group">
+                    <label for="appointmentLocation" class="text-white">Local:</label>
+                    <input type="text" id="appointmentLocation" class="form-control" required>
+                  </div>
+                  <div class="form-group text-center">
+                    <button type="button" id="addAppointment" class="btn btn-success">Adicionar Compromisso</button>
+                  </div>
+                </form>
+                <ul id="agendaList" class="list-group list-group-flush">
+                  <!-- Agenda será gerada aqui com JavaScript -->
+                </ul>
               </div>
+            </div>
           </div>
+        </div>
       </div>
+    </div>
   </div>
-  </div>
-<!-- Fim Agenda -->
+  <!-- Fim Agenda -->
 
   <!-- Scripts -->
   <script src="js/aos.js"></script>
