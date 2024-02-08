@@ -11,7 +11,7 @@ Maximize sua eficiência com a **Lista de Tarefas TaskForm**. Crie, priorize e a
 ## 3. Bloco de Notas Versátil:
 Capte suas ideias instantaneamente no **Bloco de Notas TaskForm**. Organize suas notas por categorias, adicione anexos e acesse suas informações de maneira rápida e intuitiva. Nunca perca uma ideia brilhante ou uma informação importante novamente.
 
-## 4. Calculadora Multifuncional:
+## 4. Calculadora :
 Simplifique seus cálculos diários com a **Calculadora TaskForm**. Integrada ao aplicativo, ela oferece conveniência para realizar operações matemáticas sem interromper suas outras atividades. Agilidade e praticidade em um só lugar.
 
 ## Por que escolher o TaskForm:
