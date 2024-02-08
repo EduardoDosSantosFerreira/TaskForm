@@ -37,7 +37,7 @@
             <a class="nav-link" href="#Tasklist">Tasklist</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#Calculadora">Calculadora</a>
+            <a class="nav-link" href="#calculadora">calculadora</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#Notepad">NotePad</a>
@@ -46,10 +46,10 @@
             <a class="nav-link" href="#Agenda">Agenda</a>
           </li>
         </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <form class="d-flex" role="search" onsubmit="event.preventDefault(); redirecionar();">
+          <input id="searchInput" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+      </form>
       </div>
     </div>
   </nav>
@@ -157,9 +157,10 @@
     <div id="todo-list"></div>
   </div>
 
-  <div id="Calculadora" class="link"></div>
+  <div id="calculadora" class="link"></div>
+  <div id="calculadoraSection"></div>
 
-  <!-- Calculadora -->
+  <!-- calculadora -->
 
   <div class="container todo-container" data-aos="fade-down">
     <header>
@@ -192,10 +193,10 @@
       </div>
     </div>
   </div>
-  <!-- Fim Calculadora -->
+  <!-- Fim calculadora -->
 
   <!-- NotePad -->
-  <div id="Notepad" class="container todo-container" data-aos="fade-down">
+  <div id="notepad" class="container todo-container" data-aos="fade-down">
     <header>
       <div class="titulo" data-aos="fade-right"><br>
         <h1>NotePad</h1>
@@ -208,6 +209,8 @@
 
   <!-- Agenda -->
   <div class="container todo-container" data-aos="fade-down">
+    <br>
+    <h1 style="align-items: center; text-align: center;">calendario</h1 data-aos="fade-down" >
     <div class="container mt-5">
       <div class="card">
         <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
@@ -264,6 +267,7 @@
           <h1>Previsão Do Tempo</h1>
         </div>
       </header>
+      <br>
       <div id="pdt" class="container">
 
         <div style="display: inline-flex; align-items: center;">
@@ -300,6 +304,7 @@
     <script src="js/calculadora.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/custom-carousel.js"></script>
+    <script src="js/navscript.js"></script>
     <script>
       // Inicialização da animação AOS
       AOS.init({

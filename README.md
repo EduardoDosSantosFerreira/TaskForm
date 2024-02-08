@@ -1,6 +1,6 @@
 # Bem-vindo ao TaskForm: Seu Hub Completo para Produtividade Multifuncional!
 
-TaskForm é a solução definitiva para quem busca simplificar e aprimorar sua rotina diária. Este aplicativo e site foram projetados para oferecer uma experiência integrada, reunindo quatro ferramentas essenciais que tornarão sua vida mais organizada e produtiva: Calendário, Lista de Tarefas, Bloco de Notas e Calculadora.
+TaskForm é a solução definitiva para quem busca simplificar e aprimorar sua rotina diária. Este aplicativo e site foram projetados para oferecer uma experiência integrada, reunindo quatro ferramentas essenciais que tornarão sua vida mais organizada e produtiva: Calendário, Lista de Tarefas, Bloco de Notas e calculadora.
 
 ## 1. Calendário Dinâmico:
 O **Calendário TaskForm** coloca seus compromissos e eventos em um só lugar, proporcionando uma visão clara do seu tempo. Personalize lembretes, agende eventos importantes e mantenha-se no controle de sua agenda, seja para o trabalho, estudos ou lazer.
@@ -11,8 +11,8 @@ Maximize sua eficiência com a **Lista de Tarefas TaskForm**. Crie, priorize e a
 ## 3. Bloco de Notas Versátil:
 Capte suas ideias instantaneamente no **Bloco de Notas TaskForm**. Organize suas notas por categorias, adicione anexos e acesse suas informações de maneira rápida e intuitiva. Nunca perca uma ideia brilhante ou uma informação importante novamente.
 
-## 4. Calculadora :
-Simplifique seus cálculos diários com a **Calculadora TaskForm**. Integrada ao aplicativo, ela oferece conveniência para realizar operações matemáticas sem interromper suas outras atividades. Agilidade e praticidade em um só lugar.
+## 4. calculadora :
+Simplifique seus cálculos diários com a **calculadora TaskForm**. Integrada ao aplicativo, ela oferece conveniência para realizar operações matemáticas sem interromper suas outras atividades. Agilidade e praticidade em um só lugar.
 
 ## Por que escolher o TaskForm:
 - **Centralização Eficiente:** Todas as ferramentas essenciais reunidas para uma experiência completa.

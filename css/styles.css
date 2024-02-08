@@ -340,7 +340,7 @@ body::-webkit-scrollbar-track {
   width: 40px;
 }
 
-/* Calculadora */
+/* calculadora */
 .calculator-container {
   background-color: #fdfdfd;
   border-radius: 10px;
@@ -375,7 +375,7 @@ button:hover {
   background-color: #ddddddc4;
   color: #5524E0;
 }
-/* Fim Calculadora */
+/* Fim calculadora */
 
 /* NotePad */
 .notepad-container {
