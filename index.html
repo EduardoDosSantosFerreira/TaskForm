@@ -31,9 +31,6 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="#Tasklist">Tasklist</a>
           </li>
           <li class="nav-item">
@@ -44,6 +41,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#Agenda">Agenda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#pdt">PDT</a>
           </li>
         </ul>
         <form class="d-flex" role="search" onsubmit="event.preventDefault(); redirecionar();">
@@ -65,8 +65,10 @@
 
     <!-- Relógio -->
     <div class="clock">
-      <div id="time"></div>
-    </div>
+      <div id="time" class="time"></div>
+      <div id="milliseconds" class="milliseconds"></div>
+  </div>
+  
 
     <!-- Slide Container -->
     <div id="slide-container">
@@ -245,7 +247,9 @@
                   </div>
                   <div class="form-group">
                     <label for="appointmentLocation" class="text-white">Local:</label>
-                    <input type="text" id="appointmentLocation" class="form-control" required>
+                    <input type="text" id="appointmentLocation" class="form-control" required placeholder="Escreva seu Compromisso">
+                  <br>
+                  <br>
                   </div>
                   <div class="form-group text-center">
                     <button type="button" id="addAppointment" class="btn btn-success">Adicionar Compromisso</button>
