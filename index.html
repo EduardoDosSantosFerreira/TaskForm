@@ -45,11 +45,6 @@
           <li class="nav-item">
             <a class="nav-link" href="#Agenda">Agenda</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
-            </a>
-          </li>
         </ul>
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -179,7 +174,7 @@
 
   <div class="container todo-container" data-aos="fade-down">
     <header>
-      <div  class="titulo" data-aos="fade-right"><br>
+      <div class="titulo" data-aos="fade-right"><br>
         <h1>Calculator</h1>
       </div>
     </header>
@@ -273,25 +268,58 @@
     </div>
   </div>
   <!-- Fim Agenda -->
+  <bdy>
+    <div class="container todo-container" data-aos="fade-down">
+      <header>
+        <div class="titulo" data-aos="fade-right"><br>
+          <h1>Previsão Do Tempo</h1>
+        </div>
+      </header>
+      <div id="pdt" class="container">
 
-  <!-- Scripts -->
-  <script src="js/aos.js"></script>
-  <script src="js/clock.js"></script>
-  <script src="js/popper.js"></script>
-  <script src="js/jquery.js"></script>
-  <script src="js/notepad.js"></script>
-  <script src="js/scripts.js"></script>
-  <script src="js/calendario.js"></script>
-  <script src="js/calculadora.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/custom-carousel.js"></script>
-  <script>
-    // Inicialização da animação AOS
-    AOS.init({
-      duration: 2000,
-    });
-  </script>
-  <!--  -->
+        <div style="display: inline-flex; align-items: center;">
+          <input class="input-cidade" placeholder="Digite o nome da cidade">
+          <button id="lup" onclick="bot()">
+            <img class="lupa" src="https://www.svgrepo.com/show/488200/find.svg" style="width: 20px;">
+          </button>
+        </div>
+        <br>
+        <br>
+        <div class="caixa-media">
+          <h4 class="cidade">Tempo em Rio de Janeiro</h4>
+          <h3 class="tempo">28°C</h3>
+          <div style="display: inline-flex; align-items: center;">
+            <img class="icone" style="background-color: rgb(145, 39, 193); margin-right: 35px;"
+              src="https://openweathermap.org/img/wn/04n.png">
+            <p class="descricao">Nuvens Dispersas</p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+    </div>
+    <br>
+    <br>
+    <!-- Scripts -->
+    <script src="js/aos.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/temp.js"></script>
+    <script src="js/notepad.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/calendario.js"></script>
+    <script src="js/calculadora.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/custom-carousel.js"></script>
+    <script>
+      // Inicialização da animação AOS
+      AOS.init({
+        duration: 2000,
+      });
+    </script>
+    <!--  -->
 
 </body>
 
