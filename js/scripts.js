@@ -244,13 +244,13 @@ const updateTodoLocalStorage = (todoOldText, todoNewText) => {
 
 loadTodos();
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
   // Obtém a referência para o ícone de atualização
-  var refreshIcons = document.querySelectorAll('.fa-refresh');
+  var refreshIcons = document.querySelectorAll(".fa-refresh");
 
   // Adiciona um ouvinte de eventos para o clique em cada ícone de atualização
   refreshIcons.forEach(function (refreshIcon) {
-    refreshIcon.addEventListener('click', function () {
+    refreshIcon.addEventListener("click", function () {
       // Limpa o localStorage
       localStorage.clear();
 

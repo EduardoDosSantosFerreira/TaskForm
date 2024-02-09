@@ -21,6 +21,10 @@ function redirecionar() {
     if (input === 'previsão do tempo') {
         pdt.scrollIntoView({ behavior: 'smooth' });
     }
+    var tasklist = document.getElementById('tasklist');
+    if (input === 'tasklist') {
+        tasklist.scrollIntoView({ behavior: 'smooth' });
+    }
 }
 // Navbar Hide
 let lastScrollTop = 0;
