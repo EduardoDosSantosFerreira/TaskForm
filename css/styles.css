@@ -14,6 +14,7 @@ body {
   /* Gradiente de fundo para o corpo */
   background: linear-gradient(90deg, rgba(19, 59, 255, 0.635) 0%, rgba(136, 45, 45, 0.863) 25%, rgba(168, 0, 183, 0.726) 100%);
    background-repeat: repeat-y;
+   padding-top: 60px;
 }
 
 button {

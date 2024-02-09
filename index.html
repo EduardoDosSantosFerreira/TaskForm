@@ -21,7 +21,7 @@
 
 <body>
   <!-- NavBar -->
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <nav id="navbar" class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="#"><img src="img/tskf_icon.png" id="nav-icon" alt="nav-icon"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -31,7 +31,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="#Tasklist">Tasklist</a>
+            <a class="nav-link" href="#titulo">Tasklist</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#calculadora">calculadora</a>
@@ -49,12 +49,12 @@
         <form class="d-flex" role="search" onsubmit="event.preventDefault(); redirecionar();">
           <input id="searchInput" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+        </form>
       </div>
     </div>
   </nav>
 
-  <div class="container todo-container" data-aos="fade-down">
+  <div class="container todo-container" id="titulo" data-aos="fade-down">
 
     <!-- Cabeçalho -->
     <header>
@@ -163,7 +163,6 @@
   <div id="calculadoraSection"></div>
 
   <!-- calculadora -->
-
   <div class="container todo-container" data-aos="fade-down">
     <header>
       <div class="titulo" data-aos="fade-right"><br>

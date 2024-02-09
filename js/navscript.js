@@ -1,3 +1,4 @@
+// Barra de busca
 function redirecionar() {
     var input = document.getElementById('searchInput').value.toLowerCase();
     var calculadora = document.getElementById('calculadora');
@@ -21,3 +22,19 @@ function redirecionar() {
         pdt.scrollIntoView({ behavior: 'smooth' });
     }
 }
+// Navbar Hide
+let lastScrollTop = 0;
+
+window.addEventListener("scroll", function() {
+  let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+  
+  if (currentScroll > lastScrollTop) {
+    // Scroll para baixo
+    document.getElementById("navbar").style.top = "-65px"; // Esconde a navbar
+  } else {
+    // Scroll para cima
+    document.getElementById("navbar").style.top = "0"; // Mostra a navbar
+  }
+  
+  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Para tratar o caso de scroll no topo
+}, false);
