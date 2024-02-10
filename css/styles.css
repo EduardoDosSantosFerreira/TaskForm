@@ -1,20 +1,25 @@
 /* Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap");
 
 /* All */
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Cinzel', serif;
+  font-family: "Cinzel", serif;
   color: #000000;
 }
 
 body {
   /* Gradiente de fundo para o corpo */
-  background: linear-gradient(90deg, rgba(19, 59, 255, 0.635) 0%, rgba(136, 45, 45, 0.863) 25%, rgba(168, 0, 183, 0.726) 100%);
-   background-repeat: repeat-y;
-   padding-top: 60px;
+  background: linear-gradient(
+    90deg,
+    rgba(19, 59, 255, 0.635) 0%,
+    rgba(136, 45, 45, 0.863) 25%,
+    rgba(168, 0, 183, 0.726) 100%
+  );
+  background-repeat: repeat-y;
+  padding-top: 60px;
 }
 
 button {
@@ -246,7 +251,6 @@ select {
   height: var(--plus_sideLength);
   background-color: #006dd4;
   overflow: hidden;
-  
 }
 
 .plusButton::before {
@@ -256,12 +260,12 @@ select {
   right: 0;
   width: 0;
   height: 0;
-  border-width: 0 var(--plus_topRightTriangleSideLength) var(--plus_topRightTriangleSideLength) 0;
+  border-width: 0 var(--plus_topRightTriangleSideLength)
+    var(--plus_topRightTriangleSideLength) 0;
   border-style: solid;
   border-color: transparent rgb(0, 80, 240) transparent transparent;
   transition-timing-function: ease-in-out;
   transition-duration: 0.2s;
-
 }
 
 .plusButton:hover {
@@ -276,7 +280,7 @@ select {
   --plus_topRightTriangleSideLength: calc(var(--plus_sideLength) * 2);
 }
 
-.plusButton>.plusIcon {
+.plusButton > .plusIcon {
   fill: white;
   width: calc(var(--plus_sideLength) * 0.7);
   height: calc(var(--plus_sideLength) * 0.7);
@@ -285,18 +289,18 @@ select {
   transition-duration: 0.2s;
 }
 
-.plusButton:hover>.plusIcon {
+.plusButton:hover > .plusIcon {
   fill: black;
   transform: rotate(180deg);
 }
 
-.plusButton:focus-visible>.plusIcon {
+.plusButton:focus-visible > .plusIcon {
   fill: black;
   transform: rotate(180deg);
 }
 
-#adc{
-  border-color: rgba(240, 248, 255, 0); 
+#adc {
+  border-color: rgba(240, 248, 255, 0);
   background-color: rgba(240, 248, 255, 0);
 }
 .carousel-caption {
@@ -329,7 +333,11 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-thumb {
-  background: linear-gradient(45deg, #4e69a2, #8360c3); /* Gradiente azul e roxo */
+  background: linear-gradient(
+    45deg,
+    #4e69a2,
+    #8360c3
+  ); /* Gradiente azul e roxo */
   border-radius: 6px; /* Raio dos cantos da "thumb" (o indicador de posição) */
 }
 
@@ -337,7 +345,7 @@ body::-webkit-scrollbar-track {
   background: #f0f0f0; /* Cor de fundo da barra de rolagem */
 }
 
-#nav-icon{
+#nav-icon {
   width: 40px;
 }
 
@@ -374,7 +382,7 @@ button {
 
 button:hover {
   background-color: #ddddddc4;
-  color: #5524E0;
+  color: #5524e0;
 }
 /* Fim calculadora */
 
@@ -429,7 +437,8 @@ textarea {
   margin-bottom: 0;
 }
 
-.table th, .table td {
+.table th,
+.table td {
   text-align: center;
 }
 
@@ -437,15 +446,20 @@ textarea {
   overflow-x: auto;
 }
 
-.btn-light, .btn-success {
+.btn-light,
+.btn-success {
   font-size: 1rem;
 }
 
-.btn-dark, .btn-light, .btn-success {
+.btn-dark,
+.btn-light,
+.btn-success {
   color: #fff;
 }
 
-.btn-dark, .btn-light, .btn-success {
+.btn-dark,
+.btn-light,
+.btn-success {
   background-color: #000;
   border-color: #000;
 }
@@ -453,6 +467,6 @@ textarea {
 /* Adaptações para dispositivos de tela menores */
 @media (max-width: 768px) {
   #calendarTable {
-      margin-bottom: 20px; /* Espaçamento entre o calendário e a agenda */
+    margin-bottom: 20px; /* Espaçamento entre o calendário e a agenda */
   }
 }
