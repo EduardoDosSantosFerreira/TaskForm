@@ -36,7 +36,6 @@
       <div id="milliseconds" class="milliseconds"></div>
     </div>
 
-
     <!-- Slide Container -->
     <div id="slide-container">
       <div id="amanhecer" class="slide hidden" title="Amanhã: 6h00 às 11h59">
@@ -233,7 +232,6 @@
     </div>
   </div>
   <!-- Fim Agenda -->
-  <bdy>
     <div class="container todo-container" data-aos="fade-down">
       <header>
         <div class="titulo" data-aos="fade-right"><br>
@@ -265,6 +263,55 @@
     </div>
     <br>
     <br>
+
+<!-- Tradução -->
+<div class="container todo-container" data-aos="fade-down">
+  <header>
+    <div class="titulo" data-aos="fade-right">
+      <h1>Tradução</h1>
+    </div>
+  </header>
+
+  <div class="row">
+    <!-- Lado esquerdo: Entrada de texto -->
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="original-text">Texto Original:</label>
+        <textarea id="original-text" class="form-control" rows="6" placeholder="Digite o texto a ser traduzido..."></textarea>
+      </div>
+      <div class="form-group">
+        <label for="input-language">Idioma de entrada:</label>
+        <select id="input-language" class="form-control">
+          <option value="auto">Detectar Idioma</option>
+          <option value="pt">Português</option>
+          <option value="en">Inglês</option>
+          <!-- Adicione mais opções conforme necessário -->
+        </select>
+      </div>
+    </div>
+
+    <!-- Lado direito: Saída da tradução -->
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="translated-text">Tradução:</label>
+        <textarea id="translated-text" class="form-control" rows="6" readonly></textarea>
+      </div>
+      <div class="form-group">
+        <label for="output-language">Idioma de saída:</label>
+        <select id="output-language" class="form-control">
+          <option value="en">Inglês</option>
+          <option value="pt">Português</option>
+          <!-- Adicione mais opções conforme necessário -->
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group text-center">
+    <button id="translate-btn" class="btn btn-primary">Traduzir</button>
+  </div>
+</div>
+
     <!-- Scripts -->
     <script src="js/aos.js"></script>
     <script src="js/clock.js"></script>
@@ -278,12 +325,14 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/custom-carousel.js"></script>
     <script src="js/navscript.js"></script>
+    <script src="js/translation.js"></script>
     <script>
       // Inicialização da animação AOS
       AOS.init({
         duration: 2000,
       });
     </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>
 
 </html>
