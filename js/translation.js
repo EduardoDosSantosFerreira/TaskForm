@@ -1,75 +1,72 @@
 // Função para detectar o idioma do texto usando a API do Google Translate
-function detectLanguage(text) {
-  // URL da API do Google Translate para detecção de idioma
+async function detectLanguage(text) {
   const apiUrl = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=en&dt=t&q=${encodeURIComponent(text)}`;
 
-  // Requisição AJAX para a API do Google Translate
-  return new Promise((resolve, reject) => {
-    $.ajax({
-      url: apiUrl,
-      method: 'GET',
-      dataType: 'json',
-      success: function (data) {
-        // Extrair o idioma detectado
-        const detectedLanguage = data[2];
-        resolve(detectedLanguage);
-      },
-      error: function (error) {
-        console.error('Erro ao detectar idioma:', error);
-        reject(error);
-      }
-    });
-  });
+  try {
+    const response = await fetch(apiUrl);
+    if (!response.ok) {
+      throw new Error('Erro ao detectar idioma');
+    }
+    const data = await response.json();
+    return data[2];
+  } catch (error) {
+    console.error('Erro ao detectar idioma:', error);
+    throw error;
+  }
 }
 
 // Função para traduzir o texto usando a API do Google Translate
-function translateText() {
-  const originalText = document.getElementById('original-text').value;
+async function translateText() {
+  const originalText = document.getElementById('original-text').value.trim();
   const inputLang = document.getElementById('input-language').value;
   const outputLang = document.getElementById('output-language').value;
 
-  // Verifica se o idioma de entrada é "Detectar idioma" e executa a detecção
-  if (inputLang === 'auto') {
-    detectLanguage(originalText)
-      .then(detectedLang => {
-        // Atualiza o idioma de entrada com o idioma detectado
-        document.getElementById('input-language').value = detectedLang;
-        // Traduz o texto usando o idioma detectado
-        translateText();
-      })
-      .catch(error => {
-        console.error('Erro ao detectar e traduzir:', error);
-      });
-    return;
-  }
-
-  // URL da API do Google Translate para tradução
-  const apiUrl = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=${inputLang}&tl=${outputLang}&dt=t&q=${encodeURIComponent(originalText)}`;
-
-  // Requisição AJAX para a API do Google Translate
-  $.ajax({
-    url: apiUrl,
-    method: 'GET',
-    dataType: 'json',
-    success: function (data) {
-      // Processa a resposta para obter a tradução
-      const translatedText = data[0][0][0];
-      // Exibe a tradução no textarea de saída
-      document.getElementById('translated-text').value = translatedText;
-    },
-    error: function (error) {
-      console.error('Erro ao traduzir:', error);
+  try {
+    let apiUrl = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=${inputLang}&tl=${outputLang}&dt=t&q=${encodeURIComponent(originalText)}`;
+    
+    // Se o idioma de entrada for "auto", detecta o idioma primeiro
+    if (inputLang === 'auto') {
+      const detectedLang = await detectLanguage(originalText);
+      apiUrl = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=${detectedLang}&tl=${outputLang}&dt=t&q=${encodeURIComponent(originalText)}`;
+      // Atualiza o idioma de entrada com o idioma detectado
+      document.getElementById('input-language').value = detectedLang;
     }
-  });
+    
+    const response = await fetch(apiUrl);
+    if (!response.ok) {
+      throw new Error('Erro ao traduzir texto');
+    }
+    const data = await response.json();
+    const translatedText = data[0][0][0];
+    document.getElementById('translated-text').value = translatedText;
+  } catch (error) {
+    console.error('Erro ao traduzir:', error);
+    document.getElementById('translated-text').value = 'Erro ao traduzir o texto.';
+  }
 }
 
 // Event listener para o botão de tradução
 document.getElementById('translate-btn').addEventListener('click', translateText);
 
 // Event listener para o textarea de texto original (tradução automática)
-document.getElementById('original-text').addEventListener('input', function() {
+document.getElementById('original-text').addEventListener('input', translateText);
+
+// Event listener para atualizar opções de idioma de saída ao mudar o idioma de entrada
+document.getElementById('input-language').addEventListener('change', function() {
+  const inputLang = this.value;
+  const outputLangSelect = document.getElementById('output-language');
+  
+  // Habilita todas as opções de idioma de saída
+  Array.from(outputLangSelect.options).forEach(option => {
+    option.disabled = false;
+  });
+
+  // Desabilita a opção selecionada como idioma de entrada na lista de idiomas de saída
+  outputLangSelect.querySelector(`option[value="${inputLang}"]`).disabled = true;
+
+  // Traduz novamente ao mudar o idioma de entrada
   translateText();
 });
 
 // Inicializa a detecção de idioma ao carregar a página
-detectLanguage('');
+translateText();  // Traduz o texto inicial ao carregar a página

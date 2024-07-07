@@ -80,7 +80,7 @@ window.addEventListener("scroll", function() {
   
   if (currentScroll > lastScrollTop) {
     // Scroll para baixo
-    document.getElementById("navbar").style.top = "-65px"; // Esconde a navbar
+    document.getElementById("navbar").style.top = "-75px"; // Esconde a navbar
   } else {
     // Scroll para cima
     document.getElementById("navbar").style.top = "0"; // Mostra a navbar

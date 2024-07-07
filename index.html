@@ -267,11 +267,11 @@
 <!-- Tradução -->
 <div class="container todo-container" data-aos="fade-down">
   <header>
-    <div class="titulo" data-aos="fade-right">
+    <div class="titulo" data-aos="fade-right"><br>
       <h1>Tradução</h1>
     </div>
   </header>
-
+  <br>
   <div class="row">
     <!-- Lado esquerdo: Entrada de texto -->
     <div class="col-md-6">
@@ -282,14 +282,15 @@
       <div class="form-group">
         <label for="input-language">Idioma de entrada:</label>
         <select id="input-language" class="form-control">
-          <option value="auto">Detectar Idioma</option>
+          <option value="auto">Detectar idioma</option>
           <option value="pt">Português</option>
           <option value="en">Inglês</option>
+          <option value="es">Espanhol</option>
+          <option value="fr">Francês</option>
           <!-- Adicione mais opções conforme necessário -->
         </select>
       </div>
     </div>
-
     <!-- Lado direito: Saída da tradução -->
     <div class="col-md-6">
       <div class="form-group">
@@ -301,16 +302,20 @@
         <select id="output-language" class="form-control">
           <option value="en">Inglês</option>
           <option value="pt">Português</option>
+          <option value="es">Espanhol</option>
+          <option value="fr">Francês</option>
           <!-- Adicione mais opções conforme necessário -->
         </select>
       </div>
     </div>
   </div>
-
+  <br>
   <div class="form-group text-center">
     <button id="translate-btn" class="btn btn-primary">Traduzir</button>
   </div>
 </div>
+
+
 
     <!-- Scripts -->
     <script src="js/aos.js"></script>
