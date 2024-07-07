@@ -1,6 +1,6 @@
 function downloadNotepad() {
   // Obtém o conteúdo do Notepad
-  var notepadContent = document.getElementById("notepad").value;
+  var notepadContent = document.getElementById("notepad-textarea").value;
 
   // Cria um objeto Blob com o conteúdo do Notepad
   var blob = new Blob([notepadContent], { type: "text/plain" });

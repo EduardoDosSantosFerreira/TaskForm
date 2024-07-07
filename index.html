@@ -25,7 +25,7 @@
 
     <!-- Cabeçalho -->
     <header>
-      <div class="tasklist" data-aos="fade-right"><br>
+      <div class="tasklist" data-aos="fade-top"><br>
         <h1>TaskForm</h1>
       </div>
     </header>
@@ -57,7 +57,7 @@
         <div class="col-md-8 mb-2" data-aos="fade-left">
           <input type="text" id="todo-input" class="form-control" placeholder="O que você vai fazer?" />
         </div>
-        <div class="col-md-2 mb-2" data-aos="fade-right">
+        <div class="col-md-2 mb-2" data-aos="fade-top">
           <button id="adc">
             <div tabindex="0" type="submit" class="plusButton">
               <svg class="plusIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
@@ -111,7 +111,7 @@
       </div>
 
       <!-- Menu de filtragem -->
-      <div id="filter" data-aos="fade-right">
+      <div id="filter" data-aos="fade-top">
         <h4>Filtrar:</h4>
         <select id="filter-select" class="form-control">
           <option value="all">Todos</option>
@@ -131,7 +131,7 @@
   <!-- calculadora -->
   <div class="container todo-container" data-aos="fade-down">
     <header>
-      <div class="titulo" data-aos="fade-right"><br>
+      <div class="titulo" data-aos="fade-top"><br>
         <h1>Calculator</h1>
       </div>
     </header>
@@ -162,22 +162,23 @@
   </div>
   <!-- Fim calculadora -->
 
-  <!-- NotePad -->
-  <div id="notepad" class="container todo-container" data-aos="fade-down">
-    <header>
-      <div class="titulo" data-aos="fade-right"><br>
-        <h1>NotePad</h1>
-      </div>
-    </header>
-    <textarea id="notepad" placeholder="Digite seu texto aqui..."></textarea>
-    <button id="downloadBtn" onclick="downloadNotepad()">Download Notepad</button>
+    <!-- NotePad -->
+    <div id="notepad" class="container todo-container" data-aos="fade-down">
+      <header>
+          <div class="titulo" data-aos="fade-top"><br>
+              <h1>NotePad</h1>
+          </div>
+      </header>
+      <textarea id="notepad-textarea" placeholder="Digite seu texto aqui..."></textarea>
+      <button id="downloadBtn" onclick="downloadNotepad()">Download Notepad</button>
   </div>
   <!-- Fim NotePad -->
+
 
   <!-- Agenda -->
   <div id="calendario" class="container todo-container" data-aos="fade-down">
     <br>
-    <header data-aos="fade-right">
+    <header data-aos="fade-top">
       <h1 style="align-items: center; text-align: center;">Calendario</h1>
     </header>
     <div id="agenda" class="container mt-5">
@@ -234,7 +235,7 @@
   <!-- Fim Agenda -->
     <div class="container todo-container" data-aos="fade-down">
       <header>
-        <div class="titulo" data-aos="fade-right"><br>
+        <div class="titulo" data-aos="fade-top"><br>
           <h1>Previsão Do Tempo</h1 data-aos="fade-down">
         </div>
       </header>
@@ -267,7 +268,7 @@
 <!-- Tradução -->
 <div class="container todo-container" data-aos="fade-down">
   <header>
-    <div class="titulo" data-aos="fade-right"><br>
+    <div class="titulo" data-aos="fade-top"><br>
       <h1>Tradução</h1>
     </div>
   </header>
@@ -314,8 +315,6 @@
     <button id="translate-btn" class="btn btn-primary">Traduzir</button>
   </div>
 </div>
-
-
 
     <!-- Scripts -->
     <script src="js/aos.js"></script>

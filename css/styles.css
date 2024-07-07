@@ -10,16 +10,87 @@
   color: #000000;
 }
 
+#navbar {
+  padding-top: 10px; /* Espaçamento superior */
+  padding-bottom: 10px; /* Espaçamento inferior */
+}
+
+#nav-icon {
+  width: 40px;
+  margin-left: 20px;
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: center; /* Centraliza os itens horizontalmente */
+  align-items: center; /* Centraliza os itens verticalmente */
+}
+
+.navbar-nav .nav-item {
+  margin-right: 20px; /* Espaçamento entre os itens */
+}
+
+.form-control {
+  margin-left: auto; /* Move o campo de busca para a direita */
+  margin-right: 10px; /* Espaçamento à direita do campo de busca */
+}
+
+#search-btn {
+  margin-left: 10px; /* Espaçamento à esquerda do botão Search */
+}
+
 body {
-  /* Gradiente de fundo para o corpo */
-  background: linear-gradient(
-    90deg,
-    rgba(19, 59, 255, 0.635) 0%,
-    rgba(136, 45, 45, 0.863) 25%,
-    rgba(168, 0, 183, 0.726) 100%
-  );
-  background-repeat: repeat-y;
+  /* Estilo revisado com cores mais uniformes */
+  background: linear-gradient(90deg,
+      rgba(50, 30, 120, 0.6),
+      /* Cor intermediária */
+      rgba(80, 50, 140, 0.6),
+      /* Cor intermediária */
+      rgba(110, 70, 160, 0.6),
+      /* Cor intermediária */
+      rgba(140, 90, 180, 0.6),
+      /* Cor intermediária */
+      rgba(170, 110, 200, 0.6),
+      /* Cor intermediária */
+      rgba(200, 130, 220, 0.6),
+      /* Cor intermediária */
+      rgba(170, 110, 200, 0.6),
+      /* Cor intermediária */
+      rgba(140, 90, 180, 0.6),
+      /* Cor intermediária */
+      rgba(110, 70, 160, 0.6),
+      /* Cor intermediária */
+      rgba(80, 50, 140, 0.6),
+      /* Cor intermediária */
+      rgba(50, 30, 120, 0.6),
+      /* Cor intermediária */
+      rgba(80, 50, 140, 0.6),
+      /* Cor intermediária */
+      rgba(110, 70, 160, 0.6),
+      /* Cor intermediária */
+      rgba(140, 90, 180, 0.6),
+      /* Cor intermediária */
+      rgba(170, 110, 200, 0.6),
+      /* Cor intermediária */
+      rgba(200, 130, 220, 0.6)
+      /* Cor intermediária */
+    );
   padding-top: 60px;
+  background-size: 300% auto;
+  animation: gradientAnimation 12s infinite alternate;
+}
+
+/* Definindo a animação */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+    /* Início da animação */
+  }
+
+  100% {
+    background-position: 100% 50%;
+    /* Fim da animação */
+  }
 }
 
 button {
@@ -207,12 +278,14 @@ select {
 .clear i {
   font-size: 30px;
   color: #0174bc;
-  transition: transform 0.3s ease; /* Adicionando uma transição suave para suavizar a animação */
+  transition: transform 0.3s ease;
+  /* Adicionando uma transição suave para suavizar a animação */
 }
 
 .clear i:hover {
   cursor: pointer;
-  transform: rotate(360deg); /* Modificando a rotação para 360 graus */
+  transform: rotate(360deg);
+  /* Modificando a rotação para 360 graus */
 }
 
 /* Adicionando uma animação de rotação contínua */
@@ -220,6 +293,7 @@ select {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -260,8 +334,7 @@ select {
   right: 0;
   width: 0;
   height: 0;
-  border-width: 0 var(--plus_topRightTriangleSideLength)
-    var(--plus_topRightTriangleSideLength) 0;
+  border-width: 0 var(--plus_topRightTriangleSideLength) var(--plus_topRightTriangleSideLength) 0;
   border-style: solid;
   border-color: transparent rgb(0, 80, 240) transparent transparent;
   transition-timing-function: ease-in-out;
@@ -280,7 +353,7 @@ select {
   --plus_topRightTriangleSideLength: calc(var(--plus_sideLength) * 2);
 }
 
-.plusButton > .plusIcon {
+.plusButton>.plusIcon {
   fill: white;
   width: calc(var(--plus_sideLength) * 0.7);
   height: calc(var(--plus_sideLength) * 0.7);
@@ -289,12 +362,12 @@ select {
   transition-duration: 0.2s;
 }
 
-.plusButton:hover > .plusIcon {
+.plusButton:hover>.plusIcon {
   fill: black;
   transform: rotate(180deg);
 }
 
-.plusButton:focus-visible > .plusIcon {
+.plusButton:focus-visible>.plusIcon {
   fill: black;
   transform: rotate(180deg);
 }
@@ -303,6 +376,7 @@ select {
   border-color: rgba(240, 248, 255, 0);
   background-color: rgba(240, 248, 255, 0);
 }
+
 .carousel-caption {
   position: absolute;
   top: 0;
@@ -315,7 +389,8 @@ select {
 }
 
 #refresh {
-  color: #4c00ff; /* Cor do ícone, ajuste conforme necessário */
+  color: #4c00ff;
+  /* Cor do ícone, ajuste conforme necessário */
   /* Adicione outros estilos conforme necessário */
 }
 
@@ -329,24 +404,22 @@ select {
 }
 
 body::-webkit-scrollbar {
-  width: 12px; /* Largura da barra de rolagem */
+  width: 12px;
+  /* Largura da barra de rolagem */
 }
 
 body::-webkit-scrollbar-thumb {
-  background: linear-gradient(
-    45deg,
-    #4e69a2,
-    #8360c3
-  ); /* Gradiente azul e roxo */
-  border-radius: 6px; /* Raio dos cantos da "thumb" (o indicador de posição) */
+  background: linear-gradient(45deg,
+      #4e69a2,
+      #8360c3);
+  /* Gradiente azul e roxo */
+  border-radius: 6px;
+  /* Raio dos cantos da "thumb" (o indicador de posição) */
 }
 
 body::-webkit-scrollbar-track {
-  background: #f0f0f0; /* Cor de fundo da barra de rolagem */
-}
-
-#nav-icon {
-  width: 40px;
+  background: #f0f0f0;
+  /* Cor de fundo da barra de rolagem */
 }
 
 /* calculadora */
@@ -384,6 +457,7 @@ button:hover {
   background-color: #ddddddc4;
   color: #5524e0;
 }
+
 /* Fim calculadora */
 
 /* NotePad */
@@ -394,8 +468,10 @@ button:hover {
   padding: 20px;
   width: 400px;
   display: flex;
-  flex-direction: column; /* Adicionado para garantir que os elementos sejam empilhados verticalmente */
-  align-items: center; /* Centraliza os elementos no eixo transversal (vertical) */
+  flex-direction: column;
+  /* Adicionado para garantir que os elementos sejam empilhados verticalmente */
+  align-items: center;
+  /* Centraliza os elementos no eixo transversal (vertical) */
 }
 
 textarea {
@@ -412,7 +488,8 @@ textarea {
   padding: 10px 20px;
   font-size: 1rem;
   cursor: pointer;
-  margin: 10px auto 0; /* Centraliza o botão e adiciona espaço acima */
+  margin: 10px auto 0;
+  /* Centraliza o botão e adiciona espaço acima */
   transition: background-color 0.3s;
 }
 
@@ -467,6 +544,22 @@ textarea {
 /* Adaptações para dispositivos de tela menores */
 @media (max-width: 768px) {
   #calendarTable {
-    margin-bottom: 20px; /* Espaçamento entre o calendário e a agenda */
+    margin-bottom: 20px;
+    /* Espaçamento entre o calendário e a agenda */
   }
+}
+
+#search-btn {
+  background-color: rgba(21, 21, 148, 0.541);
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#search-btn:hover {
+  background-color: rgba(21, 21, 148, 0.8);
+  /* Ajuste a opacidade conforme necessário */
+  color: #ffffff;
+  /* Mantém a cor do texto */
 }
