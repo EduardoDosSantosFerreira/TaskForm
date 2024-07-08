@@ -6,12 +6,14 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <!-- Título da página -->
   <title>Taskform</title>
   <!-- Estilos CSS -->
   <link rel="stylesheet" href="css/aos.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
     integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -54,7 +56,7 @@
     <form id="todo-form">
       <p id="Tasklist">Adicione Sua Tarefa</p>
       <div class="form-row">
-        <div class="col-md-8 mb-2" data-aos="fade-left">
+        <div class="col-md-8 mb-2" data-aos="fade-top">
           <input type="text" id="todo-input" class="form-control" placeholder="O que você vai fazer?" />
         </div>
         <div class="col-md-2 mb-2" data-aos="fade-top">
@@ -92,7 +94,7 @@
     </form>
 
     <!-- Barra de ferramentas -->
-    <div id="toolbar" data-aos="fade-left">
+    <div id="toolbar" data-aos="fade-top">
       <!--  -->
 
       <!-- Barra de pesquisa -->
@@ -162,18 +164,17 @@
   </div>
   <!-- Fim calculadora -->
 
-    <!-- NotePad -->
-    <div id="notepad" class="container todo-container" data-aos="fade-down">
-      <header>
-          <div class="titulo" data-aos="fade-top"><br>
-              <h1>NotePad</h1>
-          </div>
-      </header>
-      <textarea id="notepad-textarea" placeholder="Digite seu texto aqui..."></textarea>
-      <button id="downloadBtn" onclick="downloadNotepad()">Download Notepad</button>
+  <!-- NotePad -->
+  <div id="notepad" class="container todo-container" data-aos="fade-down">
+    <header>
+      <div class="titulo" data-aos="fade-top"><br>
+        <h1>NotePad</h1>
+      </div>
+    </header>
+    <textarea id="notepad-textarea" placeholder="Digite seu texto aqui..."></textarea>
+    <button id="downloadBtn" onclick="downloadNotepad()">Download Notepad</button>
   </div>
   <!-- Fim NotePad -->
-
 
   <!-- Agenda -->
   <div id="calendario" class="container todo-container" data-aos="fade-down">
@@ -233,110 +234,138 @@
     </div>
   </div>
   <!-- Fim Agenda -->
-    <div class="container todo-container" data-aos="fade-down">
+  <div class="container todo-container" data-aos="fade-down">
+    <header>
+      <div class="titulo" data-aos="fade-top"><br>
+        <h1>Previsão Do Tempo</h1 data-aos="fade-down">
+      </div>
+    </header>
+    <br>
+    <div id="pdt" class="container">
+
+      <div style="display: inline-flex; align-items: center;">
+        <input class="input-cidade" placeholder="Digite o nome da cidade">
+        <button id="lup" onclick="bot()">
+          <img class="lupa" src="https://www.svgrepo.com/show/488200/find.svg" style="width: 20px;">
+        </button>
+      </div>
+      <br>
+      <br>
+      <div class="caixa-media">
+        <h4 class="cidade">Tempo em Rio de Janeiro</h4>
+        <h3 class="tempo">28°C</h3>
+        <div style="display: inline-flex; align-items: center;">
+          <img class="icone" style="background-color: rgb(113, 169, 247); margin-right: 35px;"
+            src="https://openweathermap.org/img/wn/04n.png">
+          <p class="descricao">Nuvens Dispersas</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <br>
+  <!-- Tradução -->
+  <div class="container todo-container" data-aos="fade-down">
+    <header>
+      <div class="titulo" id="translate" data-aos="fade-top"><br>
+        <h1>Tradução</h1>
+      </div>
+    </header>
+    <br>
+    <div class="row">
+      <!-- Lado esquerdo: Entrada de texto -->
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="original-text">Texto Original:</label>
+          <textarea id="original-text" class="form-control" rows="6"
+            placeholder="Digite o texto a ser traduzido..."></textarea>
+        </div>
+        <div class="form-group">
+          <label for="input-language">Idioma de entrada:</label>
+          <select id="input-language" class="form-control">
+            <option value="auto">Detectar idioma</option>
+            <option value="pt">Português</option>
+            <option value="en">Inglês</option>
+            <option value="es">Espanhol</option>
+            <option value="fr">Francês</option>
+            <!-- Adicione mais opções conforme necessário -->
+          </select>
+        </div>
+      </div>
+      <!-- Lado direito: Saída da tradução -->
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="translated-text">Tradução:</label>
+          <textarea id="translated-text" class="form-control" rows="6" readonly></textarea>
+        </div>
+        <div class="form-group">
+          <label for="output-language">Idioma de saída:</label>
+          <select id="output-language" class="form-control">
+            <option value="en">Inglês</option>
+            <option value="pt">Português</option>
+            <option value="es">Espanhol</option>
+            <option value="fr">Francês</option>
+            <!-- Adicione mais opções conforme necessário -->
+          </select>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="form-group text-center">
+      <button id="translate-btn" class="btn btn-primary">Traduzir</button>
+    </div>
+  </div>
+
+  <div class="mapa">
+    <div class="container todo-container">
       <header>
         <div class="titulo" data-aos="fade-top"><br>
-          <h1>Previsão Do Tempo</h1 data-aos="fade-down">
+          <h1>Map</h1>
         </div>
       </header>
-      <br>
-      <div id="pdt" class="container">
-
-        <div style="display: inline-flex; align-items: center;">
-          <input class="input-cidade" placeholder="Digite o nome da cidade">
-          <button id="lup" onclick="bot()">
-            <img class="lupa" src="https://www.svgrepo.com/show/488200/find.svg" style="width: 20px;">
-          </button>
-        </div>
-        <br>
-        <br>
-        <div class="caixa-media">
-          <h4 class="cidade">Tempo em Rio de Janeiro</h4>
-          <h3 class="tempo">28°C</h3>
-          <div style="display: inline-flex; align-items: center;">
-            <img class="icone" style="background-color: rgb(113, 169, 247); margin-right: 35px;"
-              src="https://openweathermap.org/img/wn/04n.png">
-            <p class="descricao">Nuvens Dispersas</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
-    <br>
-    <br>
-
-<!-- Tradução -->
-<div class="container todo-container" data-aos="fade-down">
-  <header>
-    <div class="titulo" data-aos="fade-top"><br>
-      <h1>Tradução</h1>
-    </div>
-  </header>
-  <br>
-  <div class="row">
-    <!-- Lado esquerdo: Entrada de texto -->
-    <div class="col-md-6">
-      <div class="form-group">
-        <label for="original-text">Texto Original:</label>
-        <textarea id="original-text" class="form-control" rows="6" placeholder="Digite o texto a ser traduzido..."></textarea>
-      </div>
-      <div class="form-group">
-        <label for="input-language">Idioma de entrada:</label>
-        <select id="input-language" class="form-control">
-          <option value="auto">Detectar idioma</option>
-          <option value="pt">Português</option>
-          <option value="en">Inglês</option>
-          <option value="es">Espanhol</option>
-          <option value="fr">Francês</option>
-          <!-- Adicione mais opções conforme necessário -->
-        </select>
-      </div>
-    </div>
-    <!-- Lado direito: Saída da tradução -->
-    <div class="col-md-6">
-      <div class="form-group">
-        <label for="translated-text">Tradução:</label>
-        <textarea id="translated-text" class="form-control" rows="6" readonly></textarea>
-      </div>
-      <div class="form-group">
-        <label for="output-language">Idioma de saída:</label>
-        <select id="output-language" class="form-control">
-          <option value="en">Inglês</option>
-          <option value="pt">Português</option>
-          <option value="es">Espanhol</option>
-          <option value="fr">Francês</option>
-          <!-- Adicione mais opções conforme necessário -->
-        </select>
-      </div>
+      <div id="map"></div>
     </div>
   </div>
-  <br>
-  <div class="form-group text-center">
-    <button id="translate-btn" class="btn btn-primary">Traduzir</button>
-  </div>
-</div>
 
-    <!-- Scripts -->
-    <script src="js/aos.js"></script>
-    <script src="js/clock.js"></script>
-    <script src="js/popper.js"></script>
-    <script src="js/jquery.js"></script>
-    <script src="js/temp.js"></script>
-    <script src="js/notepad.js"></script>
-    <script src="js/scripts.js"></script>
-    <script src="js/calendario.js"></script>
-    <script src="js/calculadora.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/custom-carousel.js"></script>
-    <script src="js/navscript.js"></script>
-    <script src="js/translation.js"></script>
-    <script>
-      // Inicialização da animação AOS
-      AOS.init({
-        duration: 2000,
-      });
-    </script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+  <!-- Links Scripts -->
+  <script src="js/aos.js"></script>
+  <script src="js/clock.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/jquery.js"></script>
+  <script src="js/temp.js"></script>
+  <script src="js/notepad.js"></script>
+  <script src="js/scripts.js"></script>
+  <script src="js/calendario.js"></script>
+  <script src="js/calculadora.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/custom-carousel.js"></script>
+  <script src="js/navscript.js"></script>
+  <script src="js/translation.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <!-- Scripts in code -->
+  <script>
+    // Inicialização do mapa com coordenadas de São Paulo, Brasil
+    var map = L.map('map').setView([-23.55052, -46.633308], 13);
+
+    // Adiciona uma camada de mapa do OpenStreetMap
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Adiciona um marcador no centro do mapa
+    var marker = L.marker([-23.55052, -46.633308]).addTo(map);
+  </script>
+
+  <script>
+    // Inicialização da animação AOS
+    AOS.init({
+      duration: 2000,
+    });
+  </script>
+
 </body>
 
 </html>

@@ -27,7 +27,10 @@ function adicionarLoginAoDOM() {
                       <a class="nav-link" href="#pdt">PDT</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" href="#maps">Maps</a>
+                      <a class="nav-link" href="#translate">Tradutor</a>
+                  </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#maps">Maps</a>
                   </li>
               </ul>
               <form class="d-flex" role="search" onsubmit="event.preventDefault(); redirecionar();">

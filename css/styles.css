@@ -563,3 +563,8 @@ textarea {
   color: #ffffff;
   /* Mantém a cor do texto */
 }
+
+#map{
+  height: 700px;
+  width: 100%;
+}
