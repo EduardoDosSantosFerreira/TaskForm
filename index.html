@@ -315,7 +315,9 @@
       <button id="translate-btn" class="btn btn-primary">Traduzir</button>
     </div>
   </div>
+  <!-- Fim da tradução -->
 
+  <!-- Mapa -->
   <div class="mapa">
     <div class="container todo-container">
       <header>
@@ -326,29 +328,55 @@
       <div id="map"></div>
     </div>
   </div>
+  <!-- Fim do mapa -->
 
+  <!-- Dicionário -->
   <div class="container todo-container">
-    <header>
-      <div class="titulo" data-aos="fade-top"><br>
-        <div class="dictionary-container" id="english-dictionary">
-          <h1>Dicionário em Inglês</h1>
-          <input type="text" id="word-input-en" placeholder="Digite uma palavra em inglês..." />
-          <button onclick="searchWord('en')">Pesquisar</button>
-          <div class="result" id="result-en"></div>
-        </div>
-      
-        <div class="dictionary-container" id="portuguese-dictionary">
-          <h1>Dicionário em Português</h1>
-          <input type="text" id="word-input-pt" placeholder="Digite uma palavra em português..." />
-          <button onclick="searchWord('pt')">Pesquisar</button>
-          <div class="result" id="result-pt"></div>
-        </div>
+    <div class="titulo" data-aos="fade-top"><br>
+      <div class="dictionary-container" id="english-dictionary">
+        <h1>Dicionário em Inglês</h1>
+        <input type="text" id="word-input-en" placeholder="Digite uma palavra em inglês..." />
+        <button onclick="searchWord('en')">Pesquisar</button>
+        <div class="result" id="result-en"></div>
       </div>
-    </header>
-    
+      <br>
+      <br>
+      <div class="dictionary-container" id="portuguese-dictionary">
+        <h1>Dicionário em Português</h1>
+        <input type="text" id="word-input-pt" placeholder="Digite uma palavra em português..." />
+        <button onclick="searchWord('pt')">Pesquisar</button>
+        <div class="result" id="result-pt"></div>
+      </div>
+    </div>
   </div>
+  <!-- Fim do dicionário -->
 
+<!-- Gerador de senhas -->
+<div class="container todo-container">
 
+<div class="password-generator">
+  <h1>Gerador de Senhas</h1>
+  <label for="password-length">Comprimento da Senha:</label>
+  <input type="number" id="password-length" value="12" min="4" max="50">
+  
+  <button onclick="generatePassword()">Gerar Senha</button>
+  
+  <div id="password-display">
+      <input type="text" id="password" readonly>
+      <button onclick="copyPassword()">Copiar</button>
+  </div>
+  
+  <h2>Gerenciador de Senhas</h2>
+  <label for="password-name">Nome da Senha:</label>
+  <input type="text" id="password-name">
+  <button onclick="savePassword()">Salvar Senha</button>
+  
+  <h3>Senhas Salvas</h3>
+  <ul id="saved-passwords"></ul>
+  
+  <button onclick="downloadPasswords()">Baixar Senhas</button>
+</div>
+</div>
 
   <!-- Links Scripts -->
   <script src="js/aos.js"></script>
@@ -365,6 +393,7 @@
   <script src="js/navscript.js"></script>
   <script src="js/translation.js"></script>
   <script src="js/dici.js"></script>
+  <script src="js/passwordgen.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <!-- Scripts in code -->
@@ -387,7 +416,7 @@
       duration: 2000,
     });
   </script>
-
+ 
 </body>
 
 </html>

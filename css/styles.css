@@ -583,3 +583,47 @@ input {
   margin-top: 20px;
   text-align: left;
 }
+
+/* Gerador de senhas */
+
+#password-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+#password-display input {
+  flex: 1;
+  margin-right: 10px;
+}
+
+#saved-passwords {
+  list-style-type: none;
+  padding: 0;
+  text-align: left;
+}
+
+#saved-passwords li {
+  background: #f9f9f9;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#saved-passwords li button {
+  padding: 5px 10px;
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#saved-passwords li button:hover {
+  background: #c82333;
+}
