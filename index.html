@@ -327,6 +327,27 @@
     </div>
   </div>
 
+  <div class="container todo-container">
+    <header>
+      <div class="titulo" data-aos="fade-top"><br>
+        <div class="dictionary-container" id="english-dictionary">
+          <h1>Dicionário em Inglês</h1>
+          <input type="text" id="word-input-en" placeholder="Digite uma palavra em inglês..." />
+          <button onclick="searchWord('en')">Pesquisar</button>
+          <div class="result" id="result-en"></div>
+        </div>
+      
+        <div class="dictionary-container" id="portuguese-dictionary">
+          <h1>Dicionário em Português</h1>
+          <input type="text" id="word-input-pt" placeholder="Digite uma palavra em português..." />
+          <button onclick="searchWord('pt')">Pesquisar</button>
+          <div class="result" id="result-pt"></div>
+        </div>
+      </div>
+    </header>
+    
+  </div>
+
 
 
   <!-- Links Scripts -->
@@ -343,6 +364,7 @@
   <script src="js/custom-carousel.js"></script>
   <script src="js/navscript.js"></script>
   <script src="js/translation.js"></script>
+  <script src="js/dici.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <!-- Scripts in code -->

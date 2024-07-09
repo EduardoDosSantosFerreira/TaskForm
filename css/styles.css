@@ -568,3 +568,18 @@ textarea {
   height: 700px;
   width: 100%;
 }
+
+/* Dicionário */
+
+input {
+  width: calc(100% - 44px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.result {
+  margin-top: 20px;
+  text-align: left;
+}
