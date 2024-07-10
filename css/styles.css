@@ -627,3 +627,24 @@ input {
 #saved-passwords li button:hover {
   background: #c82333;
 }
+
+/* Gerador */
+
+.image-editor {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 80%;
+  max-width: 600px;
+}
+
+#image {
+  max-width: 100%;
+}
+
+#canvas {
+  display: none;
+  margin-top: 20px;
+}

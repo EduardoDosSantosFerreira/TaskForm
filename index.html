@@ -351,51 +351,101 @@
   </div>
   <!-- Fim do dicionário -->
 
-<!-- Gerador de senhas -->
-<div class="container todo-container">
+  <!-- Gerador de senhas -->
+  <div class="container todo-container">
 
-<div class="password-generator">
-  <h1>Gerador de Senhas</h1>
-  <label for="password-length">Comprimento da Senha:</label>
-  <input type="number" id="password-length" value="12" min="4" max="50">
-  
-  <button onclick="generatePassword()">Gerar Senha</button>
-  
-  <div id="password-display">
-      <input type="text" id="password" readonly>
-      <button onclick="copyPassword()">Copiar</button>
+    <div class="password-generator">
+      <h1>Gerador de Senhas</h1>
+      <label for="password-length">Comprimento da Senha:</label>
+      <input type="number" id="password-length" value="12" min="4" max="50">
+
+      <button onclick="generatePassword()">Gerar Senha</button>
+
+      <div id="password-display">
+        <input type="text" id="password" readonly>
+        <button onclick="copyPassword()">Copiar</button>
+      </div>
+
+      <h2>Gerenciador de Senhas</h2>
+      <label for="password-name">Nome da Senha:</label>
+      <input type="text" id="password-name">
+      <button onclick="savePassword()">Salvar Senha</button>
+
+      <h3>Senhas Salvas</h3>
+      <ul id="saved-passwords"></ul>
+
+      <button onclick="downloadPasswords()">Baixar Senhas</button>
+    </div>
   </div>
-  
-  <h2>Gerenciador de Senhas</h2>
-  <label for="password-name">Nome da Senha:</label>
-  <input type="text" id="password-name">
-  <button onclick="savePassword()">Salvar Senha</button>
-  
-  <h3>Senhas Salvas</h3>
-  <ul id="saved-passwords"></ul>
-  
-  <button onclick="downloadPasswords()">Baixar Senhas</button>
-</div>
-</div>
+  <!-- Fim no gerenciador de senhas -->
+
+  <!-- Conversor de unidades -->
+  <div class="container todo-container">
+
+    <div class="converter">
+      <h1>Conversor de Unidades</h1>
+      <label for="unit-type">Tipo de Unidade:</label>
+      <select id="unit-type" onchange="populateUnits()">
+        <option value="length">Comprimento</option>
+        <option value="weight">Peso</option>
+        <option value="volume">Volume</option>
+      </select>
+
+      <label for="input-value">Valor:</label>
+      <input type="number" id="input-value" placeholder="Digite o valor">
+
+      <label for="input-unit">Unidade de Entrada:</label>
+      <select id="input-unit"></select>
+
+      <label for="output-unit">Unidade de Saída:</label>
+      <select id="output-unit"></select>
+
+      <button onclick="convertUnit()">Converter</button>
+
+      <h2>Resultado:</h2>
+      <p id="result"></p>
+    </div>
+  </div>
+
+  <!-- Gerador QR Code -->
+  <div class="container todo-container">
+
+    <div class="qr-generator">
+      <h1>Gerador de QR Code</h1>
+
+      <label for="qr-input">Texto ou URL:</label>
+      <input type="text" id="qr-input" placeholder="Digite o texto ou URL">
+
+      <button onclick="generateQRCode()">Gerar QR Code</button>
+
+      <div id="qr-result">
+        <canvas id="qr-canvas"></canvas>
+      </div>
+    </div>
+  </div>
+  <!-- Fim do Gerador -->
 
   <!-- Links Scripts -->
   <script src="js/aos.js"></script>
+  <script src="js/temp.js"></script>
+  <script src="js/dici.js"></script>
   <script src="js/clock.js"></script>
   <script src="js/popper.js"></script>
   <script src="js/jquery.js"></script>
-  <script src="js/temp.js"></script>
   <script src="js/notepad.js"></script>
   <script src="js/scripts.js"></script>
+  <script src="js/geradorqr.js"></script>
+  <script src="js/navscript.js"></script>
   <script src="js/calendario.js"></script>
   <script src="js/calculadora.js"></script>
+  <script src="js/translation.js"></script>
+  <script src="js/passwordgen.js"></script>
+  <script src="js/convertunit.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/custom-carousel.js"></script>
-  <script src="js/navscript.js"></script>
-  <script src="js/translation.js"></script>
-  <script src="js/dici.js"></script>
-  <script src="js/passwordgen.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
   <!-- Scripts in code -->
   <script>
     // Inicialização do mapa com coordenadas de São Paulo, Brasil
@@ -416,7 +466,7 @@
       duration: 2000,
     });
   </script>
- 
+
 </body>
 
 </html>
