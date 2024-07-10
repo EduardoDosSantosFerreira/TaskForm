@@ -648,3 +648,13 @@ input {
   display: none;
   margin-top: 20px;
 }
+
+/* Speed Test */
+#results {
+  margin-top: 20px;
+}
+
+#results p {
+  font-size: 18px;
+  margin: 5px 0;
+}
