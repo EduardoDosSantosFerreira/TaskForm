@@ -10,13 +10,15 @@
   <!-- Título da página -->
   <title>Taskform</title>
   <!-- Estilos CSS -->
-  <link rel="stylesheet" href="css/aos.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/aos.css">
+  <link rel="stylesheet" href="css/navandside.css">
+  <link rel="stylesheet" href="css/styles.css"/>
+  <link rel="stylesheet" href="css/calculadora.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
-    integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- Ícone da página -->
   <link rel="icon" type="image" sizes="50x50" href="img/tskf_icon.png">
 </head>
@@ -425,44 +427,60 @@
   </div>
   <!-- Fim do Gerador -->
 
-
-  <!-- Speed Test -->
+  <!-- Cronômetro -->
   <div class="container todo-container">
-    <div class="speed-test">
-      <h1>Teste de Velocidade da Internet</h1>
-      
-      <button onclick="startSpeedTest()">Iniciar Teste de Velocidade</button>
-      
-      <div id="results">
-          <p>Velocidade de Download: <span id="download-speed">-</span> Mbps</p>
-          <p>Velocidade de Upload: <span id="upload-speed">-</span> Mbps</p>
-          <p>Latência (Ping): <span id="ping">-</span> ms</p>
-      </div>
-  </div>
-  </div>
 
+    <div id="stopwatch">
+      <h2>Cronômetro</h2>
+      <div id="stopwatchDisplay">00:00:00</div>
+      <button id="startStopStopwatchBtn">Iniciar</button>
+      <button id="resetStopwatchBtn">Resetar</button>
+  </div>
+  
+  </div>
+<!-- Fim do Cronômetro -->
 
-  <!-- Links Scripts -->
-  <script src="js/aos.js"></script>
-  <script src="js/temp.js"></script>
-  <script src="js/dici.js"></script>
-  <script src="js/clock.js"></script>
-  <script src="js/popper.js"></script>
-  <script src="js/jquery.js"></script>
-  <script src="js/notepad.js"></script>
-  <script src="js/scripts.js"></script>
-  <script src="js/geradorqr.js"></script>
-  <script src="js/navscript.js"></script>
-  <script src="js/calendario.js"></script>
-  <script src="js/calculadora.js"></script>
-  <script src="js/translation.js"></script>
-  <script src="js/passwordgen.js"></script>
-  <script src="js/convertunit.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/custom-carousel.js"></script>
+<!-- Temporizador -->
+<div class="container todo-container">
+
+<div id="timer">
+  <h2>Temporizador</h2>
+  <input type="number" id="minutesInput" placeholder="Minutos">
+  <input type="number" id="secondsInput" placeholder="Segundos">
+  <div id="timerDisplay">00:00</div>
+  <button id="startTimerBtn">Iniciar</button>
+  <button id="resetTimerBtn">Resetar</button>
+</div>
+</div>
+<!-- Fim do Temporizador -->
+
+<!-- JS components -->
+<script src="js/components/navscript.js"></script>
+
+<!-- JS dist -->
+<script src="js/dist/geradorqr.js"></script>
+<script src="js/dist/calendario.js"></script>
+<script src="js/dist/translation.js"></script>
+<script src="js/dist/convertunit.js"></script>
+<script src="js/dist/calculadora.js"></script>
+<script src="js/dist/temporizador.js"></script>
+<script src="js/dist/temp.js"></script>
+<script src="js/dist/dici.js"></script>
+<script src="js/dist/clock.js"></script>
+<script src="js/dist/cronos.js"></script>
+<script src="js/dist/notepad.js"></script>
+
+  <!-- JS utils -->
+  <script src="js/utils/aos.js"></script>
+  <script src="js/utils/popper.js"></script>
+  <script src="js/utils/jquery.js"></script>
+  <script src="js/utils/scripts.js"></script>
+  <script src="js/utils/bootstrap.min.js"></script>
+  <script src="js/utils/custom-carousel.js"></script>
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+  
   <!-- Scripts in code -->
   <script>
     // Inicialização do mapa com coordenadas de São Paulo, Brasil

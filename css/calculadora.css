@@ -1,0 +1,37 @@
+/* calculadora */
+.calculator-container {
+    background-color: #fdfdfd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+  }
+  
+  #display {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 1.5rem;
+  }
+  
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+  }
+  
+  button {
+    padding: 15px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #ddddddc4;
+    color: #5524e0;
+  }
+  
+  /* Fim calculadora */

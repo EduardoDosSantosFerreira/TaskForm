@@ -10,33 +10,106 @@
   color: #000000;
 }
 
-#navbar {
-  padding-top: 10px; /* Espaçamento superior */
-  padding-bottom: 10px; /* Espaçamento inferior */
+/* body */
+
+/* Modo escuro */
+body.dark-mode {
+  background: #222; /* Cor de fundo escura */
+  color: #fff; /* Cor do texto principal */
 }
 
-#nav-icon {
+/* Ajustes para elementos específicos no modo escuro */
+body.dark-mode .navbar-nav .nav-item a {
+  color: #ccc; /* Links na barra de navegação */
+}
+
+body.dark-mode .sidebar {
+  background-color: #333; /* Cor de fundo da barra lateral */
+}
+
+body.dark-mode button {
+  background-color: #444; /* Cor de fundo para botões */
+  color: #fff; /* Cor do texto dos botões */
+}
+
+/* Toggle para alternar entre modo claro e escuro */
+#toggle-dark-mode {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1001;
+  background-color: #fff;
+  color: #222;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Ícone para o toggle */
+#toggle-dark-mode i {
+  font-size: 24px;
+}
+
+/* Estilos para o switch de toggle */
+.switch {
+  position: relative;
+  display: inline-block;
   width: 40px;
-  margin-left: 20px;
+  height: 20px;
+  margin-top: 7px;
 }
 
-.navbar-nav {
-  display: flex;
-  justify-content: center; /* Centraliza os itens horizontalmente */
-  align-items: center; /* Centraliza os itens verticalmente */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
-.navbar-nav .nav-item {
-  margin-right: 20px; /* Espaçamento entre os itens */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 20px;
 }
 
-.form-control {
-  margin-left: auto; /* Move o campo de busca para a direita */
-  margin-right: 10px; /* Espaçamento à direita do campo de busca */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
 }
 
-#search-btn {
-  margin-left: 10px; /* Espaçamento à esquerda do botão Search */
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+.slider.round {
+  border-radius: 20px;
+}
+
+/* Estilos específicos para quando o site estiver no modo escuro */
+body.dark-mode #toggle-dark-mode {
+  background-color: #222;
+  color: #fff;
+}
+
+body.active {
+  margin-left: 250px;
 }
 
 body {
@@ -422,43 +495,7 @@ body::-webkit-scrollbar-track {
   /* Cor de fundo da barra de rolagem */
 }
 
-/* calculadora */
-.calculator-container {
-  background-color: #fdfdfd;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  padding: 20px;
-  text-align: center;
-}
 
-#display {
-  width: 100%;
-  margin-bottom: 10px;
-  padding: 10px;
-  font-size: 1.5rem;
-}
-
-.buttons {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 10px;
-}
-
-button {
-  padding: 15px;
-  font-size: 1.2rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-button:hover {
-  background-color: #ddddddc4;
-  color: #5524e0;
-}
-
-/* Fim calculadora */
 
 /* NotePad */
 .notepad-container {
@@ -564,7 +601,7 @@ textarea {
   /* Mantém a cor do texto */
 }
 
-#map{
+#map {
   height: 700px;
   width: 100%;
 }
@@ -647,14 +684,4 @@ input {
 #canvas {
   display: none;
   margin-top: 20px;
-}
-
-/* Speed Test */
-#results {
-  margin-top: 20px;
-}
-
-#results p {
-  font-size: 18px;
-  margin: 5px 0;
 }

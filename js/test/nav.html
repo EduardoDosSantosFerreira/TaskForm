@@ -1,0 +1,58 @@
+<nav id="navbar" class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img src="img/tskf_icon.png" id="nav-icon" alt="nav-icon"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#tasklist">Tasklist</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#calculadora">Calculadora</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#notepad">NotePad</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#agenda">Agenda</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#pdt">PDT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#translate">Tradutor</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#map">Maps</a>
+                </li>
+                <li class="nav-item">
+                    <label class="switch">
+                        <input id="dark-mode-toggle" type="checkbox" onclick="toggleDarkMode()">
+                        <span class="slider round"></span>
+                    </label>
+                </li>
+            </ul>
+            <form class="d-flex" role="search" onsubmit="event.preventDefault(); redirecionar();">
+                <input id="searchInput" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button id="search-btn" class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+            <a href="cadastro.html" class="btn btn-primary ms-3">Cadastrar</a>
+        </div>
+    </div>
+</nav>
+
+<div id="sidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>
+    <ul class="sidebar-items">
+        <li><a href="#tasklist">Tasklist</a></li>
+        <li><a href="#calculadora">Calculadora</a></li>
+        <li><a href="#notepad">NotePad</a></li>
+        <li><a href="#agenda">Agenda</a></li>
+        <li><a href="#pdt">PDT</a></li>
+        <li><a href="#translate">Tradutor</a></li>
+        <li><a href="#map">Maps</a></li>
+    </ul>
+</div>

@@ -1,0 +1,81 @@
+/* navbar */
+#navbar {
+    padding-top: 10px;
+    /* Espaçamento superior */
+    padding-bottom: 10px;
+    /* Espaçamento inferior */
+  }
+  
+  #nav-icon {
+    width: 40px;
+    margin-left: 20px;
+  }
+  
+  .navbar-nav {
+    display: flex;
+    justify-content: center;
+    /* Centraliza os itens horizontalmente */
+    align-items: center;
+    /* Centraliza os itens verticalmente */
+  }
+  
+  .navbar-nav .nav-item {
+    margin-right: 20px;
+    /* Espaçamento entre os itens */
+  }
+  
+  .form-control {
+    margin-left: auto;
+    /* Move o campo de busca para a direita */
+    margin-right: 10px;
+    /* Espaçamento à direita do campo de busca */
+  }
+  
+  #search-btn {
+    margin-left: 10px;
+    /* Espaçamento à esquerda do botão Search */
+  }
+  
+  /* sidebar */
+  
+  .sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1000;
+    /* Barra lateral por cima */
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    /* Barra lateral branca */
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #111;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidebar a:hover {
+    color: #575757;
+  }
+  
+  .sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  /* Estilos para a navbar para o ícone */
+  #nav-icon {
+    cursor: pointer;
+  }
