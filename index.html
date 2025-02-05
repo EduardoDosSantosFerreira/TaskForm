@@ -13,12 +13,12 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/aos.css">
   <link rel="stylesheet" href="css/navandside.css">
-  <link rel="stylesheet" href="css/styles.css"/>
+  <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/calculadora.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
-  integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
-  crossorigin="anonymous" referrerpolicy="no-referrer" />
+    integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- Ícone da página -->
   <link rel="icon" type="image" sizes="50x50" href="img/tskf_icon.png">
 </head>
@@ -435,52 +435,52 @@
       <div id="stopwatchDisplay">00:00:00</div>
       <button id="startStopStopwatchBtn">Iniciar</button>
       <button id="resetStopwatchBtn">Resetar</button>
+    </div>
+
   </div>
-  
+  <!-- Fim do Cronômetro -->
+
+  <!-- Temporizador -->
+  <div class="container todo-container">
+
+    <div id="timer">
+      <h2>Temporizador</h2>
+      <input type="number" id="minutesInput" placeholder="Minutos">
+      <input type="number" id="secondsInput" placeholder="Segundos">
+      <div id="timerDisplay">00:00</div>
+      <button id="startTimerBtn">Iniciar</button>
+      <button id="resetTimerBtn">Resetar</button>
+    </div>
   </div>
-<!-- Fim do Cronômetro -->
+  <!-- Fim do Temporizador -->
 
-<!-- Temporizador -->
-<div class="container todo-container">
+  <!-- JS components -->
+  <script src="js/components/navscript.js"></script>
 
-<div id="timer">
-  <h2>Temporizador</h2>
-  <input type="number" id="minutesInput" placeholder="Minutos">
-  <input type="number" id="secondsInput" placeholder="Segundos">
-  <div id="timerDisplay">00:00</div>
-  <button id="startTimerBtn">Iniciar</button>
-  <button id="resetTimerBtn">Resetar</button>
-</div>
-</div>
-<!-- Fim do Temporizador -->
-
-<!-- JS components -->
-<script src="js/components/navscript.js"></script>
-
-<!-- JS dist -->
-<script src="js/dist/geradorqr.js"></script>
-<script src="js/dist/calendario.js"></script>
-<script src="js/dist/translation.js"></script>
-<script src="js/dist/convertunit.js"></script>
-<script src="js/dist/calculadora.js"></script>
-<script src="js/dist/temporizador.js"></script>
-<script src="js/dist/temp.js"></script>
-<script src="js/dist/dici.js"></script>
-<script src="js/dist/clock.js"></script>
-<script src="js/dist/cronos.js"></script>
-<script src="js/dist/notepad.js"></script>
+  <!-- JS dist -->
+  <script src="js/dist/geradorqr.js"></script>
+  <script src="js/dist/calendario.js"></script>
+  <script src="js/dist/translation.js"></script>
+  <script src="js/dist/convertunit.js"></script>
+  <script src="js/dist/calculadora.js"></script>
+  <script src="js/dist/temporizador.js"></script>
+  <script src="js/dist/temp.js"></script>
+  <script src="js/dist/dici.js"></script>
+  <script src="js/dist/clock.js"></script>
+  <script src="js/dist/cronos.js"></script>
+  <script src="js/dist/notepad.js"></script>
+  <script src="js/dist/scripts.js"></script>
 
   <!-- JS utils -->
   <script src="js/utils/aos.js"></script>
   <script src="js/utils/popper.js"></script>
   <script src="js/utils/jquery.js"></script>
-  <script src="js/utils/scripts.js"></script>
   <script src="js/utils/bootstrap.min.js"></script>
   <script src="js/utils/custom-carousel.js"></script>
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
-  
+
   <!-- Scripts in code -->
   <script>
     // Inicialização do mapa com coordenadas de São Paulo, Brasil
