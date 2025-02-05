@@ -50,7 +50,7 @@ function adicionarLoginAoDOM() {
 
 <div id="sidebar" class="sidebar">
     <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>
-    <ul class="sidebar-items">
+    <ul class="sidebar-items" style="list-style-type: none; padding: 0;">
         <li><a href="#tasklist">Tasklist</a></li>
         <li><a href="#calculadora">Calculadora</a></li>
         <li><a href="#notepad">NotePad</a></li>
